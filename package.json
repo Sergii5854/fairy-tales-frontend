@@ -1,7 +1,7 @@
 {
     "scripts": {
-
-        "build": "npm run check && rimraf dist && webpack --config config/webpack.config.js",
+        "start": "npm run build && node ./app.js",
+        "build": "rimraf dist && webpack --config config/webpack.config.js",
         "start:dev": "cross-env API_KEY=7tC0lCM6WhO65-qGQ7ep8dc05n7ajKah NODE_ENV=development webpack-dev-server --config config/webpack.config.dev.js"
     },
     "dependencies": {
