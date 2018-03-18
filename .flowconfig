@@ -3,7 +3,7 @@
 [include]
 
 [libs]
-./flow-typed/npm/
+
 
 [options]
 module.name_mapper='.*\.\(styl\|svg\|png\|jpg\|cur\)$' -> 'Stub'
