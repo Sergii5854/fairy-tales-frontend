@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import './styles.styl';
 
 import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
+import store from '../store';
 
 import Home from '../routes/home';
 
@@ -17,52 +18,24 @@ import Lullabies from '../routes/lullabies';
 import NobelLaureates from '../routes/nobel-laureates';
 import PageNotFound from '../routes/page-not-found';
 import UsageStatistics from '../routes/usage-statistics';
-import store from '../store';
-import Faivorite from "../routes/favorite/index";
+
+import Header from '../components/header';
+
+import Sidebar from '../components/sidebar';
+
+
 
 class App extends Component<{}> {
     render() {
         return (
             <Provider store={store}>
                 <BrowserRouter>
-                    <div>
-                        <div style={{width: 180, float: 'left'}}>
-                            <h1>Side Menu</h1>
-                            <ul style={{listStyleType: 'none'}}>
-                                <li>
-                                    <NavLink to="/fairytales">Всі казки</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/beloved">Улюблені</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/audio-fairy-tales">Аудіо казки</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/folk">Народні</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/author">Авторські</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/lullabies">Колискові</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/recent-uploaded">Останні завантаженні</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/nobel-laureates">Nobel Laureates</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/usage-statistics">Usage Statistics</NavLink>
-                                </li>
-                                <li style={{marginLeft: 20}}>
-                                    <NavLink to="/usage-statistics/chart">Chart</NavLink>
-                                </li>
-                            </ul>
-                        </div>
-                        <div style={{float: 'left'}}>
+                    <div className="main">
+                        <Sidebar/>
+                        <div className="content">
+                            <Header/>
                             <Switch>
+
                                 <Route exact path="/" component={Home}/>
                                 <Route path="/fairytales" component={Fairytales}/>
                                 <Route path="/beloved" component={Favorite}/>
