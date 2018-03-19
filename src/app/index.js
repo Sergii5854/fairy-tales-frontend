@@ -20,6 +20,8 @@ import PageNotFound from '../routes/page-not-found';
 import UsageStatistics from '../routes/usage-statistics';
 
 import Header from '../components/header';
+import Footer from '../components/footer';
+
 
 import Sidebar from '../components/sidebar';
 
@@ -34,6 +36,7 @@ class App extends Component<{}> {
                         <Sidebar/>
                         <div className="content">
                             <Header/>
+
                             <Switch>
 
                                 <Route exact path="/" component={Home}/>
@@ -48,6 +51,7 @@ class App extends Component<{}> {
                                 <Route path="/usage-statistics" component={UsageStatistics}/>
                                 <Route component={PageNotFound}/>
                             </Switch>
+                            <Footer/>
                         </div>
                     </div>
                 </BrowserRouter>
