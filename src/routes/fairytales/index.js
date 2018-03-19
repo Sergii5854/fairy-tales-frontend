@@ -1,30 +1,22 @@
 
 import React, {Component} from 'react';
 
-import laureates from './laureate.json';
+import fairytales from './tales-8f587-export.json';
 import DataTable from '../../components/data-table';
 import type {Data} from '../../components/data-table';
 
 
 
-class NobelLaureates extends Component<Props, State> {
+class Fairytales extends Component {
     state = {};
 
     componentDidMount() {
-        const data = laureates
-            .map(({id, firstname, surname, born, died, bornCountry, bornCity, diedCountry, diedCity, gender, prizes}) => {
+        const data = fairytales
+            .map(({id,  name,}) => {
                 const res = {
                     '#': Number(id),
-                    'First Name': firstname,
-                    'Last Name': surname,
-                    'Born': born,
-                    'Died': died,
-                    'Born Location': [bornCity, bornCountry].filter(i => i).join(', '),
-                    'Died Location': [diedCity, diedCountry].filter(i => i).join(', '),
-                    'Gender': gender,
-                    'Prizes': prizes
-                        .filter(({year, category}) => year && category)
-                        .map(({year, category}) => `${category}, ${year}`).join('; ')
+                    'Name': name
+
                 };
 
                 if (res.Born === '0000-00-00') {
@@ -57,4 +49,4 @@ class NobelLaureates extends Component<Props, State> {
     }
 }
 
-export default NobelLaureates;
+export default Fairytales;

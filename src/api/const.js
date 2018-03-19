@@ -1,4 +1,3 @@
-// @flow
 
 const CONTENT_TYPE_JSON = 'application/json;charset=UTF-8';
 

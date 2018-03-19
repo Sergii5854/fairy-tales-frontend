@@ -1,4 +1,3 @@
-// @flow
 
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
@@ -7,6 +6,8 @@ import './styles.styl';
 import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
 
 import Home from '../routes/home';
+
+import Fairytales from '../routes/fairytales';
 import NobelLaureates from '../routes/nobel-laureates';
 import PageNotFound from '../routes/page-not-found';
 import UsageStatistics from '../routes/usage-statistics';
@@ -22,6 +23,9 @@ class App extends Component<{}> {
                             <h1>Side Menu</h1>
                             <ul style={{listStyleType: 'none'}}>
                                 <li>
+                                    <NavLink to="/fairytales">Всі казки</NavLink>
+                                </li>
+                                <li>
                                     <NavLink to="/nobel-laureates">Nobel Laureates</NavLink>
                                 </li>
                                 <li>
@@ -35,6 +39,7 @@ class App extends Component<{}> {
                         <div style={{float: 'left'}}>
                             <Switch>
                                 <Route exact path="/" component={Home}/>
+                                <Route path="/fairytales" component={Fairytales}/>
                                 <Route path="/nobel-laureates" component={NobelLaureates}/>
                                 <Route path="/usage-statistics" component={UsageStatistics}/>
                                 <Route component={PageNotFound}/>

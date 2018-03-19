@@ -1,30 +1,11 @@
-// @flow
 
 import React, {Component} from 'react';
 import './styles.styl';
 
 import PaginationStrip from '../pagination-strip';
 
-export type Data = Array<{ [key: string]: any }>;
 
-type Props = {
-    data: Data,
-    onSort: (sortKey: string, sortOrderAsc: boolean) => void,
-    sortKey?: string,
-    sortOrderAsc?: boolean
-};
-
-type State = {
-    currentPage: number,
-    pageSize: number,
-    data: Data,
-    keys: Array<string>,
-    sortKey: string,
-    sortOrderAsc: boolean,
-    dataTypes: { [key: string]: string }
-};
-
-const grabKeys = (data: Data) => {
+const grabKeys = (data) => {
     const keys = data.reduce((memo, row) => ([
         ...memo,
         ...Object.keys(row).filter(key => !memo.includes(key))
@@ -54,7 +35,7 @@ const grabKeys = (data: Data) => {
     return {keys, dataTypes};
 };
 
-const sortDataSet = (data: Data, dataTypes: { [key: string]: string }, sortKey: string, sortOrderAsc: boolean): Data => {
+const sortDataSet = (data, dataTypes, sortKey, sortOrderAsc) => {
     const multiplier = sortOrderAsc ? 1 : -1;
 
     switch (dataTypes[sortKey]) {
@@ -97,7 +78,7 @@ const sortDataSet = (data: Data, dataTypes: { [key: string]: string }, sortKey: 
     }
 };
 
-const setNewDate = (props: Props) => {
+const setNewDate = (props) => {
     const {keys, dataTypes} = grabKeys(props.data);
     const sortKey = props.sortKey || keys[0];
     const sortOrderAsc = typeof (props.sortOrderAsc) === 'boolean' ? props.sortOrderAsc : true;
@@ -115,15 +96,15 @@ const setNewDate = (props: Props) => {
 
 class DataTable extends Component<Props, State> {
     static defaultProps = {
-        onSort: (sortKey: string, sortOrderAsc: boolean) => undefined
+        onSort: (sortKey, sortOrderAsc) => undefined
     };
 
-    constructor(props: Props) {
+    constructor(props) {
         super(props);
         this.state = setNewDate(props);
     }
 
-    componentWillReceiveProps(nextProps: Props) {
+    componentWillReceiveProps(nextProps) {
         const {data, sortKey, sortOrderAsc} = this.props;
 
         if (nextProps.data !== data || nextProps.sortKey !== sortKey || nextProps.sortOrderAsc !== sortOrderAsc) {
