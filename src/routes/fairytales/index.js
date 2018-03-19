@@ -19,18 +19,6 @@ class Fairytales extends Component {
 
                 };
 
-                if (res.Born === '0000-00-00') {
-                    delete res.Born;
-                } else {
-                    res.Born = new Date(Date.parse(res.Born.replace('-00-00', '-01-01')));
-                }
-
-                if (res.Died === '0000-00-00') {
-                    delete res.Died;
-                } else {
-                    res.Died = new Date(Date.parse(res.Died.replace('-00-00', '-01-01')));
-                }
-
                 return res;
             });
         this.setState({data});
