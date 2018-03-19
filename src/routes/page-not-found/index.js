@@ -1,7 +1,10 @@
-// @flow
-
 import React from 'react';
+import PageNotFoundComponent from './../../components/page-not-found';
 
-const PageNotFound = () => 'Page Not Found';
+const PageNotFound = () => {
+    return (
+        <PageNotFoundComponent/>
+    )
+}
 
 export default PageNotFound;

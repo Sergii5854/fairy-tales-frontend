@@ -42,7 +42,7 @@ export default store => next => action => {
     );
 };
 
-const get = (url: string, extraParams: Object = {}) =>
+const get = (url, extraParams) =>
     fetch(urlResolver(url, extraParams));
 
 const POST_CONFIG = {method: 'POST', headers: {'Content-Type': CONTENT_TYPE_JSON}};
