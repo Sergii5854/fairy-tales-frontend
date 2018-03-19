@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import './styles.styl';
@@ -26,7 +25,6 @@ import Footer from '../components/footer';
 import Sidebar from '../components/sidebar';
 
 
-
 class App extends Component<{}> {
     render() {
         return (
@@ -34,23 +32,23 @@ class App extends Component<{}> {
                 <BrowserRouter>
                     <div className="main">
                         <Sidebar/>
-                        <div className="content">
+                        <div className="main__content">
                             <Header/>
-
-                            <Switch>
-
-                                <Route exact path="/" component={Home}/>
-                                <Route path="/fairytales" component={Fairytales}/>
-                                <Route path="/beloved" component={Favorite}/>
-                                <Route path="/audio-fairy-tales" component={AudioFairytales}/>
-                                <Route path="/folk" component={Folk}/>
-                                <Route path="/author" component={Author}/>
-                                <Route path="/lullabies" component={Lullabies}/>
-                                <Route path="/recent-uploaded" component={RecentUploaded}/>
-                                <Route path="/nobel-laureates" component={NobelLaureates}/>
-                                <Route path="/usage-statistics" component={UsageStatistics}/>
-                                <Route component={PageNotFound}/>
-                            </Switch>
+                            <div className="main__routers">
+                                <Switch>
+                                    <Route exact path="/" component={Home}/>
+                                    <Route path="/fairytales" component={Fairytales}/>
+                                    <Route path="/beloved" component={Favorite}/>
+                                    <Route path="/audio-fairy-tales" component={AudioFairytales}/>
+                                    <Route path="/folk" component={Folk}/>
+                                    <Route path="/author" component={Author}/>
+                                    <Route path="/lullabies" component={Lullabies}/>
+                                    <Route path="/recent-uploaded" component={RecentUploaded}/>
+                                    <Route path="/nobel-laureates" component={NobelLaureates}/>
+                                    <Route path="/usage-statistics" component={UsageStatistics}/>
+                                    <Route component={PageNotFound}/>
+                                </Switch>
+                            </div>
                             <Footer/>
                         </div>
                     </div>
