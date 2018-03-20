@@ -10,9 +10,9 @@ const Sidebar = () => {
                 <li>
                     <NavLink to="/fairytales">Всі казки</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/beloved">Улюблені</NavLink>
-                </li>
+                {/*<li>*/}
+                    {/*<NavLink to="/beloved">Улюблені</NavLink>*/}
+                {/*</li>*/}
                 <li>
                     <NavLink to="/audio-fairy-tales">Аудіо казки</NavLink>
                 </li>

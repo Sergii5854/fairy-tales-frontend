@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './styles.styl';
 
-import Search from './search/'
+const Header = ({title, subTitle,background}) => {
 
-const Header = () => {
-
-
+    console.dir(title);
     return (
-        <header className={`header`}>
-            <Search/>
+        <header className="header" style={{background:`${background}`}}>
+        <h1 >{title}</h1>
+        <h3>{subTitle}</h3>
         </header>
+
     );
 
 };

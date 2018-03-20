@@ -1,5 +1,9 @@
 import React from 'react';
 import ItemFaIrytailes from './../../components/item-fairytales/'
+
+import Header from './../../components/header';
+import Footer from './../../components/footer';
+
 const testData = {
         "audioUrl": "http://kazku.novi-drova.com/audio/id_0.mp3",
         "createTime": 0,
@@ -15,7 +19,13 @@ const testData = {
 const AudioFairytales = () => {
     return (
         <div>
-            <h1>AudioFairytales</h1>
+
+            <Header
+                title="Казки дитинства"
+                subTitle="Аудіо казки"
+                 background="skyblue"
+                />
+
             <ItemFaIrytailes
                 name={testData.name}
                 text={testData.text}

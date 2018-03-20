@@ -1,10 +1,9 @@
-
 import React, {Component} from 'react';
 
 import fairytales from './tales-8f587-export.json';
 import DataTable from '../../components/data-table';
-import type {Data} from '../../components/data-table';
 
+import Header from './../../components/header/'
 
 
 class Fairytales extends Component {
@@ -12,7 +11,7 @@ class Fairytales extends Component {
 
     componentDidMount() {
         const data = fairytales
-            .map(({id,  name,}) => {
+            .map(({id, name,}) => {
                 const res = {
                     '#': Number(id),
                     'Name': name
@@ -32,7 +31,14 @@ class Fairytales extends Component {
         }
 
         return (
-            <DataTable data={data}/>
+            <div>
+                <Header
+                    title="Казки дитинства"
+                    subTitle="Аудіо казки"
+                    background="#dc76276b"
+                />
+                <DataTable data={data}/>
+            </div>
         )
     }
 }
