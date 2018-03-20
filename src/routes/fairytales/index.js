@@ -34,7 +34,7 @@ class Fairytales extends Component {
             <div>
                 <Header
                     title="Казки дитинства"
-                    subTitle="Аудіо казки"
+                    subTitle="Всі казки"
                     background="#dc76276b"
                 />
                 <DataTable data={data}/>

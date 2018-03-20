@@ -1,9 +1,16 @@
 import React from 'react';
+import Header from './../../components/header';
 
 const Folk = () => {
     return(
-        <h1>Folk
-        </h1>
+        <div>
+            <Header
+                title="Казки дитинства"
+                subTitle="Народні"
+                background="#dc23276b"
+            />
+        </div>
+
     )
 };
 

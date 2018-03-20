@@ -1,9 +1,15 @@
 import React from 'react';
+import Header from './../../components/header/'
 
 const Lullabies = () => {
     return(
-        <h1>Lullabies
-        </h1>
+        <div>
+            <Header
+                title="Казки дитинства"
+                subTitle="Колискові"
+                background="#dc23276b"
+            />
+        </div>
     )
 };
 

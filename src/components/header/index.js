@@ -3,7 +3,6 @@ import './styles.styl';
 
 const Header = ({title, subTitle,background}) => {
 
-    console.dir(title);
     return (
         <header className="header" style={{background:`${background}`}}>
         <h1 >{title}</h1>

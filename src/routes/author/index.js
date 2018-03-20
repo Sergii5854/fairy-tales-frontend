@@ -1,9 +1,15 @@
 import React from 'react';
+import Header from './../../components/header/'
 
 const Author = () => {
     return(
-        <h1>Author
-        </h1>
+        <div>
+            <Header
+                title="Казки дитинства"
+                subTitle="Авторські"
+                background="#сc76276b"
+            />
+        </div>
     )
 };
 
