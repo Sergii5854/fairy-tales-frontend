@@ -1,8 +1,6 @@
-// @flow
-
 import React from 'react';
 
-const Page = ({page, current, onClick}: { page: string | number, current: boolean, onClick: () => void }) => {
+const Page = ({page, current, onClick}) => {
     return (
         <li style={{listStyleType: 'none', display: 'inline', padding: '0 5px'}}>
             {current ?
@@ -25,13 +23,8 @@ Page.defaultProps = {
 
 const Separator = () => <Page page="..." current={true}/>;
 
-type Props = {
-    totalPages: number,
-    currentPage: number,
-    onChange: (to: number, from: number) => void
-};
 
-const Pagination = ({totalPages, currentPage, onChange}: Props) => {
+const Pagination = ({totalPages, currentPage, onChange}) => {
     if (totalPages > 1) {
         const arr = [];
         if (totalPages - 2 > 3) {
@@ -84,7 +77,7 @@ const Pagination = ({totalPages, currentPage, onChange}: Props) => {
 
 Pagination.defaultProps = {
     currentPage: 1,
-    onChange: (to: number, from: number) => undefined
+    onChange: (to, from) => undefined
 };
 
 export default Pagination;

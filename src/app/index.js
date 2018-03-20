@@ -25,7 +25,7 @@ import Footer from '../components/footer';
 import Sidebar from '../components/sidebar';
 
 
-class App extends Component<{}> {
+class App extends Component {
     render() {
         return (
             <Provider store={store}>
