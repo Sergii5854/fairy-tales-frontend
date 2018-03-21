@@ -4,8 +4,8 @@ import './styles.styl';
 
 const Sidebar = () => {
     return(
-        <div className="sidebar">
-            <h1>Side Menu</h1>
+        <div className="sidebar nav-wrapper">
+          <a href="/" className="brand-logo"><h1>Side Menu</h1></a>
             <ul className="sidebar__ul">
                 <li>
                     <NavLink to="/fairytales">Всі казки</NavLink>
