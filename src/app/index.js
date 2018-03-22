@@ -36,7 +36,7 @@ class App extends Component {
                             {/*<Header/>*/}
                             <div className="main__routers">
                                 <Switch>
-                                    <Route exact path="/" component={Home}/>
+                                    <Route exact path="/" component={Fairytales}/>
                                     <Route path="/fairytales" component={Fairytales}/>
                                     {/*<Route path="/beloved" component={Favorite}/>*/}
                                     <Route path="/audio-fairy-tales" component={AudioFairytales}/>
