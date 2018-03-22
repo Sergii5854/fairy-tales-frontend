@@ -7,7 +7,7 @@ import Header from './../../components/header/'
 import axios from 'axios'
 
 class Fairytales extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
 
@@ -22,7 +22,7 @@ class Fairytales extends Component {
         axios.get('https://tales-server.herokuapp.com/api/v1/fairytales')
             .then(response => {
                 let data = response.data['fairytales']
-                console.log(data);
+
                 let dataALL = data
                     .map(({id, name,}) => {
                         const res = {
@@ -33,7 +33,7 @@ class Fairytales extends Component {
                         return res;
                     });
                 this.setState({
-                     data: dataALL
+                    data: dataALL
                 })
 
             })
