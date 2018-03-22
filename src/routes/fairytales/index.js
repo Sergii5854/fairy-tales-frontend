@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-// import fairytales from './tales-8f587-export.json';
 import DataTable from '../../components/data-table';
 
 import Header from './../../components/header/'
@@ -35,10 +34,7 @@ class Fairytales extends Component {
                 this.setState({
                     data: dataALL
                 })
-
             })
-
-
     }
 
     render() {
