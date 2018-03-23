@@ -150,8 +150,13 @@ class DataTable extends Component<Props, State> {
                     </thead>
                     <tbody>
                     {data.slice((currentPage - 1) * pageSize, currentPage * pageSize).map((row, rowNumber) => (
-                        <tr key={rowNumber}>
+                        <tr key={rowNumber}
+                            className={`table__row `}
+                            dataid={`${JSON.stringify(row['#'])}`}
+                        >
+                            {/*axios here */}
                             {keys.map(key => (
+
                                 <td key={key}>
                                     {(() => {
                                         if (row[key] !== undefined && row[key] !== null) {
