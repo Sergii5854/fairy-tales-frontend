@@ -18,7 +18,7 @@ function handleError(err) {
 }
 
 gulp.task('styles', function () {
-    return gulp.src('./theme/sass/main.scss')
+    return gulp.src('./src/theme/sass/main.scss')
         .pipe(plumber({ errorHandler: handleError }))
         .pipe(sourcemaps.init())
         .pipe(scss({outputStyle: 'compressed', includePaths: SASS_INCLUDE_PATHS}))
@@ -26,7 +26,7 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('./css'));
 });
 gulp.task('js', function() {
-    return gulp.src('./theme/js/**/*.js')
+    return gulp.src('./src/theme/js/**/*.js')
         .pipe(plumber({ errorHandler: handleError }))
         .pipe(sourcemaps.init())
         .pipe(babel({compact: true}))
@@ -37,8 +37,8 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', ['styles', 'js'], function () {
-    gulp.watch('./theme/sass/**/*.scss', ['styles']);
-    gulp.watch('./theme/js/**/*.js', ['js']);
+    gulp.watch('./src/theme/sass/**/*.scss', ['styles']);
+    gulp.watch('./src/theme/js/**/*.js', ['js']);
 });
 
 gulp.task('default', ['styles', 'js'], function () {

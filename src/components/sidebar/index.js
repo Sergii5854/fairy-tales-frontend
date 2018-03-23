@@ -4,9 +4,13 @@ import './styles.styl';
 
 const Sidebar = () => {
     return(
-        <div className="sidebar nav-wrapper">
-          <a href="/" className="brand-logo"><h1>Side Menu</h1></a>
-            <ul className="sidebar__ul">
+        <nav role="navigation">
+        <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+            <ul id="menu" className="sidebar__ul">
                 <li>
                     <NavLink to="/fairytales">Всі казки</NavLink>
                 </li>
@@ -29,7 +33,8 @@ const Sidebar = () => {
                     <NavLink to="/recent-uploaded">Останні завантаженні</NavLink>
                 </li>
             </ul>
-        </div>
+    </div>
+    </nav>
     )
 }
 
