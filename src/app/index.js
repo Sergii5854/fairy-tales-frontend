@@ -18,6 +18,7 @@ import NobelLaureates from '../routes/nobel-laureates';
 import PageNotFound from '../routes/page-not-found';
 import UsageStatistics from '../routes/usage-statistics';
 
+import ItemFairytal from './../components/item-fairytales';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -38,6 +39,7 @@ class App extends Component {
                                 <Switch>
                                     <Route exact path="/" component={Fairytales}/>
                                     <Route path="/fairytales" component={Fairytales}/>
+                                    <Route path="/fairytales/" component={ItemFairytal}/>
                                     {/*<Route path="/beloved" component={Favorite}/>*/}
                                     <Route path="/audio-fairy-tales" component={AudioFairytales}/>
                                     <Route path="/folk" component={Folk}/>
