@@ -1,7 +1,6 @@
-
 import React, {Component} from 'react';
 import './styles.styl';
-
+import axios from 'axios'
 import PaginationStrip from '../pagination-strip';
 
 
@@ -127,6 +126,15 @@ class DataTable extends Component<Props, State> {
         }, () => this.props.onSort(sortKey, sortOrderAsc));
     };
 
+    getFairytale = (data) => {
+        console.log("fairytale id : ",data);
+        axios.get(`https://tales-server.herokuapp.com/api/v1/fairytales/${data}`)
+            .then(response => {
+            let data = response.data['fairytales']
+                console.log(data);
+            })
+    }
+
     render() {
         const {currentPage, pageSize, data, keys, sortKey, sortOrderAsc, dataTypes} = this.state;
 
@@ -152,7 +160,7 @@ class DataTable extends Component<Props, State> {
                     {data.slice((currentPage - 1) * pageSize, currentPage * pageSize).map((row, rowNumber) => (
                         <tr key={rowNumber}
                             className={`table__row `}
-                            dataid={`${JSON.stringify(row['#'])}`}
+                            onClick={()=>this.getFairytale(row['#'])}
                         >
                             {/*axios here */}
                             {keys.map(key => (
