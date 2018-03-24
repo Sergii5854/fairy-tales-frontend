@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './styles.styl';
 import axios from 'axios'
 import PaginationStrip from '../pagination-strip';
-
+import {Route, Redirect} from 'react-router-dom';
 
 const grabKeys = (data) => {
     const keys = data.reduce((memo, row) => ([
@@ -127,11 +127,16 @@ class DataTable extends Component<Props, State> {
     };
 
     getFairytale = (data) => {
-        console.log("fairytale id : ",data);
+        console.log("fairytale id : ", data, typeof data);
         axios.get(`https://tales-server.herokuapp.com/api/v1/fairytales/${data}`)
             .then(response => {
-            let data = response.data['fairytales']
+                let data = response.data['fairytales']
                 console.log(data);
+
+                if (true) {
+                    console.log('/fairytales/' + data);
+                  return  <Route  path="/fairytales/33" render={() => (<Redirect to={'/fairytales/33' }/>)} />
+                }
             })
     }
 
@@ -160,7 +165,7 @@ class DataTable extends Component<Props, State> {
                     {data.slice((currentPage - 1) * pageSize, currentPage * pageSize).map((row, rowNumber) => (
                         <tr key={rowNumber}
                             className={`table__row `}
-                            onClick={()=>this.getFairytale(row['#'])}
+                            onClick={() => this.getFairytale(row['#'])}
                         >
                             {/*axios here */}
                             {keys.map(key => (
