@@ -38,8 +38,9 @@ class App extends Component {
                             <div className="main__routers">
                                 <Switch>
                                     <Route exact path="/" component={Fairytales}/>
-                                    <Route path="/fairytales" component={Fairytales}/>
                                     <Route path="/fairytales/:id" component={ItemFairytal}/>
+                                    <Route path="/fairytales" component={Fairytales}/>
+
                                     {/*<Route path="/beloved" component={Favorite}/>*/}
                                     <Route path="/audio-fairy-tales" component={AudioFairytales}/>
                                     <Route path="/folk" component={Folk}/>

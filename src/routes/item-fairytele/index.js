@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from './../../components/header/'
 import ItemFairytele from './../../components/item-fairytales/'
+import axios from 'axios'
 
-const itemFairytel = () => {
-    console.log(rerirect)
+class itemFairytel extends Component {
+    componentDidMount () {
+    console.log(this.props.match.params.id);
+      axios.get(`https://tales-server.herokuapp.com/api/v1/fairytales/${this.props.match.params.id}`)
+          .then(response => {
+              let data = response.data['fairytales']
+              console.log(data);
+          })
+    }
+    render(){
     return(
         <div>
             <Header
@@ -14,6 +23,7 @@ const itemFairytel = () => {
             <ItemFairytele/>
         </div>
     )
+  }
 };
 
 export default itemFairytel;
