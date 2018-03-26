@@ -7,7 +7,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "file-loader": "^1.1.11",
-    "materialize-css": "^1.0.0-beta",
+    "gulp": "^3.9.1",
     "react": "16.2.0",
     "react-audio-player": "^0.9.0",
     "react-dom": "16.2.0",
@@ -15,7 +15,14 @@
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
     "redux-logger": "3.0.6",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "normalize-scss": "^6.0.0"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
