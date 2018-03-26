@@ -10,6 +10,8 @@ import Home from '../routes/home';
 import Fairytales from '../routes/fairytales';
 import Favorite from '../routes/favorite';
 import AudioFairytales from '../routes/audio-fairy-tales';
+import FairytaleAdmin from '../routes/fairytale-admin';
+
 import Folk from '../routes/folk';
 import Author from '../routes/author';
 import RecentUploaded from '../routes/recent-uploaded';
@@ -43,6 +45,7 @@ class App extends Component {
 
                                     {/*<Route path="/beloved" component={Favorite}/>*/}
                                     <Route path="/audio-fairy-tales" component={AudioFairytales}/>
+                                    <Route path="/fairytale-admin" component={FairytaleAdmin}/>
                                     <Route path="/folk" component={Folk}/>
                                     <Route path="/author" component={Author}/>
                                     <Route path="/lullabies" component={Lullabies}/>
