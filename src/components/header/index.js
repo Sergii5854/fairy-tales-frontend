@@ -6,14 +6,16 @@ const Header = ({title, subTitle,background}) => {
 
     return (
         <header className="header" style={{background:`${background}`}}>
-            <a href="/">
+            <a  href="/">
                 <img
                     className="Brand"
                     src={logo}
                     alt="logo"/>
             </a>
-        <h1 >{title}</h1>
-        <h3>{subTitle}</h3>
+        <div className="title-wrapper">
+            <h1 >{title}</h1>
+            <h3>{subTitle}</h3>
+        </div>
         </header>
 
     );

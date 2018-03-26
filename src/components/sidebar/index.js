@@ -4,13 +4,14 @@ import './styles.styl';
 
 const Sidebar = () => {
     return(
-        <nav role="navigation">
-        <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-            <ul id="menu" className="sidebar__ul">
+
+        <div id="nav-icon1" className="sidebar nav-wrapper">
+            <div id="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="menu-liks" className="sidebar__ul">
                 <li>
                     <NavLink to="/fairytales">Всі казки</NavLink>
                 </li>
@@ -34,7 +35,6 @@ const Sidebar = () => {
                 </li>
             </ul>
     </div>
-    </nav>
     )
 }
 
