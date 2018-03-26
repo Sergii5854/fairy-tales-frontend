@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import './styles.styl';
 
-import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import store from '../store';
 
 import Home from '../routes/home';
@@ -10,6 +10,8 @@ import Home from '../routes/home';
 import Fairytales from '../routes/fairytales';
 import Favorite from '../routes/favorite';
 import AudioFairytales from '../routes/audio-fairy-tales';
+import FairytaleAdmin from '../routes/fairytale-admin';
+
 import Folk from '../routes/folk';
 import Author from '../routes/author';
 import RecentUploaded from '../routes/recent-uploaded';
@@ -18,7 +20,7 @@ import NobelLaureates from '../routes/nobel-laureates';
 import PageNotFound from '../routes/page-not-found';
 import UsageStatistics from '../routes/usage-statistics';
 
-import ItemFairytal from './../components/item-fairytales';
+import ItemFairytal from './../routes/item-fairytele';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -38,10 +40,12 @@ class App extends Component {
                             <div className="main__routers">
                                 <Switch>
                                     <Route exact path="/" component={Fairytales}/>
+                                    <Route path="/fairytales/:id" component={ItemFairytal}/>
                                     <Route path="/fairytales" component={Fairytales}/>
-                                    <Route path="/fairytales/" component={ItemFairytal}/>
+
                                     {/*<Route path="/beloved" component={Favorite}/>*/}
                                     <Route path="/audio-fairy-tales" component={AudioFairytales}/>
+                                    <Route path="/fairytale-admin" component={FairytaleAdmin}/>
                                     <Route path="/folk" component={Folk}/>
                                     <Route path="/author" component={Author}/>
                                     <Route path="/lullabies" component={Lullabies}/>
