@@ -21,14 +21,12 @@ class Fairytales extends Component {
         axios.get('https://tales-server.herokuapp.com/api/v1/fairytales')
             .then(response => {
                 let data = response.data['fairytales']
-
                 let dataALL = data
                     .map(({id, name,}) => {
                         const res = {
                             '#': Number(id),
                             'Name': name
                         };
-
                         return res;
                     });
                 this.setState({
