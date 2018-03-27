@@ -20,7 +20,8 @@ class itemFairytel extends Component {
                 subTitle=""
                 background="#ee76276b"
             />
-            <ItemFairytele/>
+            <ItemFairytele
+            />
         </div>
     )
   }

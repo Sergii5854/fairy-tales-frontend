@@ -1,18 +1,8 @@
-import React from 'react';
+import React,  {Component} from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
 const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTime, updated}) => {
-
-    // return (
-    //     <div className="audioblock">
-    //         <ReactAudioPlayer
-    //             src={audioUrl}
-    //
-    //             controls
-    //         />
-    //     </div>
-    // )
-
+  console.log({audioUrl, id, name});
 
     return (
         <div>
@@ -36,5 +26,6 @@ const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTim
     );
 
 };
+
 
 export default ItemFaIrytailes;
