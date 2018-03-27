@@ -2,7 +2,12 @@ import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
 const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTime, updated}) => {
-  console.log({audioUrl, id, name});
+
+  let existsAudioUrl = <ReactAudioPlayer src={audioUrl} controls />
+
+  if (audioUrl === undefined) {
+    existsAudioUrl = <ReactAudioPlayer />
+  }
 
     return (
         <div>
@@ -14,11 +19,8 @@ const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTim
                     {text}
                 </p>
                 <div className="audioblock">
-                    <ReactAudioPlayer
-                        src={audioUrl}
+                  {existsAudioUrl}
 
-                        controls
-                    />
                 </div>
             </section>
 
