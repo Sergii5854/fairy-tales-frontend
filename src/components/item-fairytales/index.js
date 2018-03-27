@@ -1,4 +1,4 @@
-import React,  {Component} from 'react';
+import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
 const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTime, updated}) => {
