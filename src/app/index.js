@@ -21,6 +21,8 @@ import PageNotFound from '../routes/page-not-found';
 import UsageStatistics from '../routes/usage-statistics';
 
 import ItemFairytal from './../routes/item-fairytele';
+import Login from './../routes/login';
+
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -52,6 +54,8 @@ class App extends Component {
                                     <Route path="/recent-uploaded" component={RecentUploaded}/>
                                     <Route path="/nobel-laureates" component={NobelLaureates}/>
                                     <Route path="/usage-statistics" component={UsageStatistics}/>
+                                    <Route path="/login" component={Login}/>
+
                                     <Route component={PageNotFound}/>
                                 </Switch>
                             </div>
