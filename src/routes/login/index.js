@@ -1,10 +1,10 @@
 import React from 'react';
 import Login from './../../components/login';
 
-const PageNotFound = () => {
+const LoginRouter = () => {
     return (
         <Login/>
     )
 }
 
-export default PageNotFound;
+export default LoginRouter;

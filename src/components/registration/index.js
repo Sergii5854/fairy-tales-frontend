@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './styles.styl';
 import logo from './logo.png'
 
+
 export default class Login extends Component {
     render() {
         return (
@@ -10,7 +11,7 @@ export default class Login extends Component {
                     <img src={logo} alt="Brand"/>
                 </div>
                 <div className='form_title'>
-                    Log<span>I</span>n
+                    Reg<span>I</span>stration
                 </div>
                 <form className='form_items'>
                     <div className='form_inputs'>
@@ -33,7 +34,7 @@ export default class Login extends Component {
                 </form>
                 <div className='form_other '>
                     <a href='#'>forgot password?</a>
-                    <a href='/registration'>Registration</a>
+                    <a href='/login'>Login</a>
                 </div>
             </div>
         );

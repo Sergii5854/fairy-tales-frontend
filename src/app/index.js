@@ -22,6 +22,7 @@ import UsageStatistics from '../routes/usage-statistics';
 
 import ItemFairytal from './../routes/item-fairytele';
 import Login from './../routes/login';
+import Registration from './../routes/registration';
 
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -55,6 +56,7 @@ class App extends Component {
                                     <Route path="/nobel-laureates" component={NobelLaureates}/>
                                     <Route path="/usage-statistics" component={UsageStatistics}/>
                                     <Route path="/login" component={Login}/>
+                                    <Route path="/registration" component={Registration}/>
 
                                     <Route component={PageNotFound}/>
                                 </Switch>

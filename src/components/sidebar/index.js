@@ -33,6 +33,12 @@ const Sidebar = () => {
                 <li>
                     <NavLink to="/recent-uploaded">Останні завантаженні</NavLink>
                 </li>
+                <li>
+                    <NavLink to="/login">Login</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/registration">Registration</NavLink>
+                </li>
             </ul>
     </div>
     )
