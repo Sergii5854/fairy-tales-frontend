@@ -43,7 +43,7 @@ export default class AudioFairytales extends Component {
               <Header
                   title="Казки дитинства"
                   subTitle="Аудіо казки"
-                   background="skyblue"
+                  background="#dc76276b"
               />
               <DataTable data={data}/>
           </div>
