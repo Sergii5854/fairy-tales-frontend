@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import './styles.styl';
+import logo from './logo.png'
 
 const Sidebar = () => {
     return(
@@ -11,6 +12,11 @@ const Sidebar = () => {
                 <span></span>
                 <span></span>
             </div>
+              <img
+                className="Brand"
+                src={logo}
+                alt="logo"
+              />
             <ul id="menu-liks" className="sidebar__ul">
                 <li>
                     <NavLink to="/fairytales">Всі казки</NavLink>
