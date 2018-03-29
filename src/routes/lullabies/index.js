@@ -46,7 +46,7 @@ export default class Lullabies extends Component {
                 <Header
                     title="Казки дитинства"
                     subTitle="Колискові"
-                    background="#dc23276b"
+                    background="#dc76276b"
                 />
                 <DataTable data={data}/>
             </div>

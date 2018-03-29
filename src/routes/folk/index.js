@@ -43,7 +43,7 @@ export default class Folk extends Component {
               <Header
                   title="Казки дитинства"
                   subTitle="Народні"
-                  background="#dc23276b"
+                  background="#dc76276b"
               />
               <DataTable data={data}/>
           </div>
