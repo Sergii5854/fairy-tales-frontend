@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import { Route, Redirect } from 'react-router'
+import Fairytales from '../../routes/fairytales';
+import PageNotFoundComponent from './../../components/page-not-found';
+import {NavLink} from 'react-router-dom';
+
 import './styles.styl';
 import logo from './logo.png'
 import {
@@ -11,12 +16,15 @@ export default class Login extends Component {
         this.state = {
           user: {
             email: '',
-            password: ''
+            password: '',
+            showError: true,
           }
         }
 
         this.changeValue = this.changeValue.bind(this)
         this.submit = this.submit.bind(this)
+        this.onShowLoginError = this.onShowLoginError.bind(this);
+
     }
 
     changeValue (key, value) {
@@ -28,11 +36,29 @@ export default class Login extends Component {
       })
     }
 
+    onShowLoginError() {
+      this.setState({
+        showError: true,
+      });
+    }
+
     submit (event) {
       event.preventDefault()
       login(this.state.user)
-        .then(console.log)
-        .catch(console.warn)
+
+
+      .then((event) => {
+        //
+        // console.log(event);
+        //   console.log(event.config.data)
+        //   console.log(this.state.user)
+
+        if (event.data.user.email === this.state.user.email) {
+            console.log('Succses');
+            this.redirect()
+          }
+      })
+      .catch(this.onShowLoginError())
     }
 
     render() {
@@ -44,6 +70,7 @@ export default class Login extends Component {
                 <div className='form_title'>
                     Log<span>I</span>n
                 </div>
+
                 <form className='form_items' onSubmit={this.submit}>
                     <div className='form_inputs'>
                         <input
@@ -65,7 +92,7 @@ export default class Login extends Component {
                         />
                         <label>Password</label>
                     </div>
-                    <button type="submit" className='form_button'>Log In</button>
+                    <button type="submit" className='form_button'>Log In </button>
                 </form>
                 <div className='form_other '>
                     <a href='#'>Forgot password?</a>
