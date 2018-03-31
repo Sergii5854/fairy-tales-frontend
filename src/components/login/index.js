@@ -16,8 +16,8 @@ import {
         super(props)
         this.state = {
           user: {
-            email: 'a@com.ua',
-            password: '1',
+            email: '',
+            password: '',
             showError: true,
           }
         }
@@ -53,7 +53,7 @@ import {
             this.props.history.push('/')
           } else {
             console.log('Error')
-            alert('invalid form')
+            alert('This user ' + this.state.user.email + ' does not exist')
           }
       })
       .catch(this.onShowLoginError())
