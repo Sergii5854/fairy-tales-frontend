@@ -5,7 +5,9 @@
     "start:dev": "cross-env API_KEY=ub5BFaJp0V2ASPxrYFiNY-ACVx-EEtAG NODE_ENV=development webpack-dev-server --config config/webpack.config.dev.js"
   },
   "dependencies": {
+    "atob": "^2.1.0",
     "axios": "^0.18.0",
+    "btoa": "^1.2.1",
     "file-loader": "^1.1.11",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
