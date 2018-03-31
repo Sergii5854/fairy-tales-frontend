@@ -45,7 +45,8 @@ class App extends Component {
                                     <Route exact path="/" component={Fairytales}/>
                                     <Route path="/fairytales/:id" component={ItemFairytal}/>
                                     <Route path="/fairytales" component={Fairytales}/>
-
+                                    <Route path="/fairytales/:id" component={ItemFairytalAdmin}/>
+                                    <Route path="/fairytales" component={FairytalesAdmin}/>
                                     {/*<Route path="/beloved" component={Favorite}/>*/}
                                     <Route path="/audio-fairy-tales" component={AudioFairytales}/>
                                     <Route path="/fairytale-admin" component={FairytaleAdmin}/>

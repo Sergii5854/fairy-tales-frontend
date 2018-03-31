@@ -30,7 +30,6 @@ export default class Login extends Component {
     }
 
     submit (event) {
-      event.preventDefault()
       registrate(this.state.user)
         .then(console.log)
         .catch(console.warn)

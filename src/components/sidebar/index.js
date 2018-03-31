@@ -20,12 +20,12 @@ const Sidebar = () => {
                 <span></span>
                 <span></span>
             </div>
-              <img
-                className="Brand"
-                src={logo}
-                alt="logo"
-              />
+
             <ul id="menu-liks" className="sidebar__ul">
+                <img
+                  src={logo}
+                  alt="logo"
+                />
                 <li>
                     <NavLink to="/fairytales">Всі казки</NavLink>
                 </li>
