@@ -42,7 +42,7 @@ export default class Author extends Component {
               <Header
                   title="Казки дитинства"
                   subTitle="Авторські"
-                  background="#сc76276b"
+                  background="#dc76276b"
               />
               <DataTable data={data}/>
           </div>

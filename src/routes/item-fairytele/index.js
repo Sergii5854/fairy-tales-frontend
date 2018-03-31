@@ -46,7 +46,7 @@ class itemFairytel extends Component {
             <Header
                 title="Казки дитинства"
                 subTitle=""
-                background="#ee76276b"
+                background="#dc76276b"
             />
             <ItemFairytele
 
