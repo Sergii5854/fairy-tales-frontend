@@ -3,7 +3,7 @@ import { Route, Redirect, Router, withRouter } from 'react-router'
 import Fairytales from '../../routes/fairytales';
 import PageNotFoundComponent from './../../components/page-not-found';
 import {NavLink} from 'react-router-dom' ;
-import btoa from 'btoa';
+//import btoa from 'btoa';
 
 import './styles.styl';
 import logo from './logo.png'
