@@ -4,18 +4,11 @@ import './styles.styl';
 import logo from './logo.png'
 
 const Sidebar = () => {
-
-    $(document).ready(function(){
-        $('#nav-icon1 #menu').click(function(){
-            $('#nav-icon1').toggleClass('open');
-            $('body').toggleClass('open-menu');
-        });
-    });
     
     return(
 
-        <div id="nav-icon1" className="sidebar nav-wrapper">
-            <div id="menu">
+        <div id="nav-icon1" className="sidebar nav-wrapper z-depth-5">
+            <div id="menu" >
                 <span></span>
                 <span></span>
                 <span></span>
