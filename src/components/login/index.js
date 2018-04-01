@@ -1,22 +1,31 @@
 import React, {Component} from 'react';
+import { Route, Redirect, Router, withRouter } from 'react-router'
+import Fairytales from '../../routes/fairytales';
+import PageNotFoundComponent from './../../components/page-not-found';
+import {NavLink} from 'react-router-dom' ;
+import btoa from 'btoa';
+
 import './styles.styl';
 import logo from './logo.png'
 import {
   login
 } from '../../services/http'
 
-export default class Login extends Component {
+ class Login extends Component {
     constructor (props) {
         super(props)
         this.state = {
           user: {
             email: '',
-            password: ''
+            password: '',
+            showError: true,
           }
         }
 
         this.changeValue = this.changeValue.bind(this)
         this.submit = this.submit.bind(this)
+        this.onShowLoginError = this.onShowLoginError.bind(this);
+
     }
 
     changeValue (key, value) {
@@ -28,14 +37,30 @@ export default class Login extends Component {
       })
     }
 
+    onShowLoginError() {
+      this.setState({
+        showError: true,
+      });
+    }
+
     submit (event) {
       event.preventDefault()
       login(this.state.user)
-        .then(console.log)
-        .catch(console.warn)
+
+      .then((event) => {
+        if (event.data.user && event.data.user.email === this.state.user.email) {
+            console.log('Succses');
+            this.props.history.push('/')
+          } else {
+            console.log('Error')
+            alert('This user ' + this.state.user.email + ' does not exist')
+          }
+      })
+      .catch(this.onShowLoginError())
     }
 
     render() {
+
         return (
             <div className='form'>
                 <div className='form_logo'>
@@ -44,7 +69,10 @@ export default class Login extends Component {
                 <div className='form_title'>
                     Log<span>I</span>n
                 </div>
+
+
                 <form className='form_items' onSubmit={this.submit}>
+
                     <div className='form_inputs'>
                         <input
                             name="email"
@@ -65,7 +93,7 @@ export default class Login extends Component {
                         />
                         <label>Password</label>
                     </div>
-                    <button type="submit" className='form_button'>Log In</button>
+                    <button type="submit" className='form_button'>Log In </button>
                 </form>
                 <div className='form_other '>
                     <a href='#'>Forgot password?</a>
@@ -76,3 +104,5 @@ export default class Login extends Component {
     }
 
 }
+
+export default withRouter(Login);
