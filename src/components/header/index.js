@@ -7,7 +7,9 @@ const Header = ({title, subTitle,background}) => {
         var element = document.getElementById("menu-links");
         element.classList.toggle("open");
         document.getElementById("menu").classList.toggle("open");
+        document.getElementById("logo").classList.toggle("hidden");
     };
+
     return (
         <header className="header" style={{background:`${background}`}}>
     <div id="nav-icon1" className="sidebar nav-wrapper">
@@ -24,6 +26,11 @@ const Header = ({title, subTitle,background}) => {
             <h1 >{title}</h1>
             <h3>{subTitle}</h3>
         </div>
+        <img
+    id = "logo" 
+    src={logo}
+    alt="logo"
+        />
         </header>
 
     );
