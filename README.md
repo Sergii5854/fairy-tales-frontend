@@ -14,15 +14,13 @@
 ### Technologies Used
 
     * ReactJS
-    * Flux
-    * Redux
     * Webpack
     
     
 ### Key Word 
     
     * ReactJS
-    * Redux
+    * Webpack
 
 
 ###  Description  ENG      

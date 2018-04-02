@@ -26,8 +26,8 @@ import Sidebar from '../components/sidebar';
 
 class App extends Component {
     render() {
-        v1
-        console.log(" v from 02 / 04");
+
+        console.log(" version from 02 / 04");
         return (
 
             <BrowserRouter>
