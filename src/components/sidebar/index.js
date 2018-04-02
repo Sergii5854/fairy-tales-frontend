@@ -4,22 +4,9 @@ import './styles.styl';
 import logo from './logo.png'
 
 const Sidebar = () => {
-   const toggle = () => {
-       var element = document.getElementById("menu-liks");
-       element.classList.toggle("hidden");
-   };
     return(
 
-        <div id="nav-icon1" className="sidebar nav-wrapper z-depth-5">
-            <div id="menu"
-            onClick={() => toggle()}
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <ul id="menu-liks"
+        <ul id="menu-links"
                 className={`sidebar__ul `}>
                 <img
                   src={logo}
@@ -56,7 +43,6 @@ const Sidebar = () => {
                     <NavLink to="/fairytales-admin">Admin</NavLink>
                 </li>
             </ul>
-    </div>
     )
 }
 
