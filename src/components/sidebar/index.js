@@ -4,6 +4,10 @@ import './styles.styl';
 import logo from './logo.png'
 
 const Sidebar = () => {
+    const toggle_nav = () => {
+        var element = document.getElementById("menu-links");
+       element.classList.remove("open");
+    };
     return(
 
         <ul id="menu-links"
@@ -13,34 +17,34 @@ const Sidebar = () => {
                   alt="logo"
                 />
                 <li>
-                    <NavLink to="/fairytales">Всі казки</NavLink>
+                    <NavLink to="/fairytales"   onClick={() => toggle_nav()}>Всі казки</NavLink>
                 </li>
                 {/*<li>*/}
                     {/*<NavLink to="/beloved">Улюблені</NavLink>*/}
                 {/*</li>*/}
                 <li>
-                    <NavLink to="/audio-fairy-tales">Аудіо казки</NavLink>
+                    <NavLink to="/audio-fairy-tales"  onClick={() => toggle_nav()}>Аудіо казки</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/folk">Народні</NavLink>
+                    <NavLink to="/folk"  onClick={() => toggle_nav()}>Народні</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/author">Авторські</NavLink>
+                    <NavLink to="/author"  onClick={() => toggle_nav()}>Авторські</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/lullabies">Колискові</NavLink>
+                    <NavLink to="/lullabies"  onClick={() => toggle_nav()}>Колискові</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/recent-uploaded">Останні завантаженні</NavLink>
+                    <NavLink to="/recent-uploaded"  onClick={() => toggle_nav()}>Останні завантаженні</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/login">Login</NavLink>
+                    <NavLink to="/login"  onClick={() => toggle_nav()}>Login</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/registration">Registration</NavLink>
+                    <NavLink to="/registration"  onClick={() => toggle_nav()}>Registration</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/fairytales-admin">Admin</NavLink>
+                    <NavLink to="/fairytales-admin"  onClick={() => toggle_nav()}>Admin</NavLink>
                 </li>
             </ul>
     )

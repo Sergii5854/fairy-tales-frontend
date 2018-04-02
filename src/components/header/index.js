@@ -6,8 +6,6 @@ const Header = ({title, subTitle,background}) => {
     const toggle = () => {
         var element = document.getElementById("menu-links");
         element.classList.toggle("open");
-        document.getElementById("menu").classList.toggle("open");
-        document.getElementById("logo").classList.toggle("hidden");
     };
 
     return (
