@@ -13,7 +13,7 @@ const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTim
         <div>
             <section data-id={id}>
                 <h1>{name}</h1>
-                <p className="text"
+                <p className="text flow-text"
                     // style={{background:`url(${imageUrl})`}}
                 >
                     {text}

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect, Router, withRouter } from 'react-router'
 import Fairytales from '../../routes/fairytales';
 import PageNotFoundComponent from './../../components/page-not-found';
-import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom' ;
+//import btoa from 'btoa';
 
 import './styles.styl';
 import logo from './logo.png'
@@ -10,7 +11,7 @@ import {
   login
 } from '../../services/http'
 
-export default class Login extends Component {
+ class Login extends Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -46,22 +47,20 @@ export default class Login extends Component {
       event.preventDefault()
       login(this.state.user)
 
-
       .then((event) => {
-        //
-        // console.log(event);
-        //   console.log(event.config.data)
-        //   console.log(this.state.user)
-
-        if (event.data.user.email === this.state.user.email) {
+        if (event.data.user && event.data.user.email === this.state.user.email) {
             console.log('Succses');
-            this.redirect()
+            this.props.history.push('/')
+          } else {
+            console.log('Error')
+            alert('This user ' + this.state.user.email + ' does not exist')
           }
       })
       .catch(this.onShowLoginError())
     }
 
     render() {
+
         return (
             <div className='form'>
                 <div className='form_logo'>
@@ -71,7 +70,9 @@ export default class Login extends Component {
                     Log<span>I</span>n
                 </div>
 
+
                 <form className='form_items' onSubmit={this.submit}>
+
                     <div className='form_inputs'>
                         <input
                             name="email"
@@ -103,3 +104,5 @@ export default class Login extends Component {
     }
 
 }
+
+export default withRouter(Login);
