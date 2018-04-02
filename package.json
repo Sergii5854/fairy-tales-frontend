@@ -2,7 +2,7 @@
   "scripts": {
     "start": "npm run build && node ./app.js",
     "build": "rimraf dist && webpack --config config/webpack.config.js",
-    "start:dev": "webpack-dev-server --config config/webpack.config.dev.js"
+    "start:dev": "cross-env API_KEY=ub5BFaJp0V2ASPxrYFiNY-ACVx-EEtAG NODE_ENV=development webpack-dev-server --config config/webpack.config.dev.js"
   },
   "dependencies": {
     "atob": "^2.1.0",
