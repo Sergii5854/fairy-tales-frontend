@@ -26,36 +26,38 @@ import Sidebar from '../components/sidebar';
 
 class App extends Component {
     render() {
+        v1
+        console.log(" v from 02 / 04");
         return (
 
-                <BrowserRouter>
-                    <div className="main">
-                        <Sidebar/>
-                        <div className="main__content">
-                            {/*<Header/>*/}
-                            <div className="main__routers">
-                                <Switch>
-                                    <Route exact path="/" component={Fairytales}/>
-                                    <Route path="/fairytales/:id" component={ItemFairytal}/>
-                                    <Route path="/fairytales" component={Fairytales}/>
-                                    <Route path="/audio-fairy-tales" component={AudioFairytales}/>
-                                    <Route path="/folk" component={Folk}/>
-                                    <Route path="/author" component={Author}/>
-                                    <Route path="/lullabies" component={Lullabies}/>
-                                    <Route path="/recent-uploaded" component={RecentUploaded}/>
-                                    <Route path="/login" component={Login}/>
-                                    <Route path="/registration" component={Registration}/>
+            <BrowserRouter>
+                <div className="main">
+                    <Sidebar/>
+                    <div className="main__content">
+                        {/*<Header/>*/}
+                        <div className="main__routers">
+                            <Switch>
+                                <Route exact path="/" component={Fairytales}/>
+                                <Route path="/fairytales/:id" component={ItemFairytal}/>
+                                <Route path="/fairytales" component={Fairytales}/>
+                                <Route path="/audio-fairy-tales" component={AudioFairytales}/>
+                                <Route path="/folk" component={Folk}/>
+                                <Route path="/author" component={Author}/>
+                                <Route path="/lullabies" component={Lullabies}/>
+                                <Route path="/recent-uploaded" component={RecentUploaded}/>
+                                <Route path="/login" component={Login}/>
+                                <Route path="/registration" component={Registration}/>
 
-                                    <Route path="/fairytales-admin/:id" component={ItemFairytalAdmin}/>
-                                    <Route path="/fairytales-admin" component={FairytaleAdmin}/>
+                                <Route path="/fairytales-admin/:id" component={ItemFairytalAdmin}/>
+                                <Route path="/fairytales-admin" component={FairytaleAdmin}/>
 
-                                    <Route component={PageNotFound}/>
-                                </Switch>
-                            </div>
-                            {/*<Footer/>*/}
+                                <Route component={PageNotFound}/>
+                            </Switch>
                         </div>
+                        {/*<Footer/>*/}
                     </div>
-                </BrowserRouter>
+                </div>
+            </BrowserRouter>
 
         );
     }
