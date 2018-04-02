@@ -8,6 +8,7 @@ import store from '../store';
 import Home from '../routes/home';
 
 import Fairytales from '../routes/fairytales';
+import ItemFairytal from './../routes/item-fairytele';
 import Favorite from '../routes/favorite';
 import AudioFairytales from '../routes/audio-fairy-tales';
 import FairytaleAdmin from '../routes/fairytale-admin';
@@ -20,7 +21,7 @@ import NobelLaureates from '../routes/nobel-laureates';
 import PageNotFound from '../routes/page-not-found';
 import UsageStatistics from '../routes/usage-statistics';
 
-import ItemFairytal from './../routes/item-fairytele';
+import ItemFairytalAdmin from './../routes/item-fairytele-admin';
 import Login from './../routes/login';
 import Registration from './../routes/registration';
 
@@ -45,11 +46,7 @@ class App extends Component {
                                     <Route exact path="/" component={Fairytales}/>
                                     <Route path="/fairytales/:id" component={ItemFairytal}/>
                                     <Route path="/fairytales" component={Fairytales}/>
-                                    <Route path="/fairytales/:id" component={ItemFairytalAdmin}/>
-                                    <Route path="/fairytales" component={FairytalesAdmin}/>
-                                    {/*<Route path="/beloved" component={Favorite}/>*/}
                                     <Route path="/audio-fairy-tales" component={AudioFairytales}/>
-                                    <Route path="/fairytale-admin" component={FairytaleAdmin}/>
                                     <Route path="/folk" component={Folk}/>
                                     <Route path="/author" component={Author}/>
                                     <Route path="/lullabies" component={Lullabies}/>
@@ -58,6 +55,9 @@ class App extends Component {
                                     <Route path="/usage-statistics" component={UsageStatistics}/>
                                     <Route path="/login" component={Login}/>
                                     <Route path="/registration" component={Registration}/>
+
+                                    <Route path="/fairytales-admin/:id" component={ItemFairytalAdmin}/>
+                                    <Route path="/fairytales-admin" component={FairytaleAdmin}/>
 
                                     <Route component={PageNotFound}/>
                                 </Switch>
