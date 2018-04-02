@@ -2,10 +2,10 @@ import React from 'react';
 
 const Page = ({page, current, onClick}) => {
     return (
-        <li style={{listStyleType: 'none', display: 'inline', padding: '0 5px'}}>
+        <li style={{listStyleType: 'none', display: 'inline', margin: '0 5px'}}>
             {current ?
-                page : (
-                    <a href="#" onClick={(e) => {
+            ((page != '...')? (<a className = "active">{page}</a>) : '...' ): (
+                    <a href="#" className = "waves-effect" onClick={(e) => {
                         e.preventDefault();
                         onClick();
                     }}>
@@ -48,11 +48,11 @@ const Pagination = ({totalPages, currentPage, onChange}) => {
         }
 
         return (
-            <ul style={{margin: '0'}}>
+            <ul className ="pagination">
                 <Page
                     page={1}
                     current={1 === currentPage}
-                    onClick={() => onChange(1, currentPage)}
+                    onClick={() => onChange (1, currentPage)}
                 />
                 {currentPage > 3 && totalPages > 5 ? <Separator/> : null}
                 {arr.map(page => (

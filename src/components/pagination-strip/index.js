@@ -1,5 +1,6 @@
 import React from 'react';
 import Pagination from '../pagination';
+import './styles.styl';
 
 
 export const SIZES = [5, 10, 25, 50, 100, 250];
@@ -9,7 +10,7 @@ const PaginationStrip = ({totalCount, currentPage, pageSize, onChange}) => (
         <select onChange={event => onChange(1, +event.target.value)} value={pageSize}>
             {SIZES.map(size => <option key={size} value={size}>{size}</option>)}
         </select>
-        <div style={{float: 'right'}}>
+        <div className = "pagination-wrapper">
             <Pagination
                 totalPages={Math.ceil(totalCount / pageSize)}
                 currentPage={currentPage}
