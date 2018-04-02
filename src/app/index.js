@@ -48,8 +48,9 @@ class App extends Component {
                                 <Route path="/login" component={Login}/>
                                 <Route path="/registration" component={Registration}/>
 
-                                <Route path="/fairytales-admin/:id" component={ItemFairytalAdmin}/>
+
                                 <Route path="/fairytales-admin" component={FairytaleAdmin}/>
+                                <Route path="/fairytales-admin/:id" component={ItemFairytalAdmin}/>
 
                                 <Route component={PageNotFound}/>
                             </Switch>
