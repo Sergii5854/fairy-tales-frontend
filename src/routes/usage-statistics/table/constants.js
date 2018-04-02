@@ -1,3 +1,0 @@
-// @flow
-
-export const SORT_USAGE_STATISTICS = 'SORT_USAGE_STATISTICS';
