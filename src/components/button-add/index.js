@@ -2,10 +2,10 @@
 import React, {Component} from 'react';
 import './styles.styl';
 import Modal from './../modal/';
-import NewFairytele from './../new-message';
+import NewFairytele from './../new-fairytele';
 
 export default class ButtonAdd extends Component {
-    constructor(props: Props) {
+    constructor(props) {
         super(props);
         this.state = {
             showModal: false
@@ -22,7 +22,7 @@ export default class ButtonAdd extends Component {
 
         const modal = this.state.showModal ? (
             <Modal>
-                <NewMessage closeNewMail={() =>  this.toggleShow()}/>
+                <NewFairytele closeModal={() =>  this.toggleShow()}/>
             </Modal>
         ) : null;
         return (
