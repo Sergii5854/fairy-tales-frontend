@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './styles.styl';
-import axios from 'axios'
+
 import PaginationStrip from '../pagination-strip';
-import {Route, Redirect} from 'react-router-dom';
+
 import { withRouter } from 'react-router'
 
 const grabKeys = (data) => {
