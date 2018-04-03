@@ -50,7 +50,7 @@ import {
       .then((event) => {
         if (event.data.user && event.data.user.email === this.state.user.email) {
             console.log('Succses');
-            this.props.history.push('/')
+            this.props.history.push('/fairytales-admin')
           } else {
             console.log('Error')
             alert('This user ' + this.state.user.email + ' does not exist')
