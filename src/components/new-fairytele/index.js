@@ -2,6 +2,16 @@ import React from 'react';
 import './styles.styl';
 
 const NewFairytele = ({closeModal}) => {
+    const state = {
+        name :"name tales "
+    }
+const example = () => {
+
+
+    state.name = "name tales 3223 "
+    console.log(state.name, state);
+    alert("example" )
+}
     return (
         <div className='new__fairytale-container'>
             <div className='new__fairytale-wrap'>
@@ -13,7 +23,7 @@ const NewFairytele = ({closeModal}) => {
                 </div>
                 <form>
 
-                    <div className='new__fairytale'>
+                    <div className='new__fairytale' onClick={example}>
 
                             <label > Назва казки</label>
                             <input name='name'/>
@@ -47,6 +57,10 @@ const NewFairytele = ({closeModal}) => {
             </div>
         </div>
     )
+};
+NewFairytele.defaultProps = {
+    name: 10,
+    text: () => undefined
 };
 
 export default NewFairytele;
