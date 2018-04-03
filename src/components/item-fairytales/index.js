@@ -1,15 +1,18 @@
 import React from 'react';
-import ReactAudioPlayer from 'react-audio-player';
+import AudioPlayer from 'react-responsive-audio-player';
 import './styles.styl';
+import './audioplayer.css';
+import './audioplayer.js';
 
 const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTime, updated}) => {
 
-  let existsAudioUrl = <ReactAudioPlayer src={audioUrl} controls />
+    var playlist =
+        [{ url: {audioUrl}, title: 'Track 1 - a track to remember' },
+            { url: {audioUrl}, title: 'Oggs Oggs Oggs' }];
 
-  if (audioUrl === undefined) {
-    existsAudioUrl = <ReactAudioPlayer />
-  }
 
+    let existsAudioUrl = <AudioPlayer  playlist={playlist}  />
+            
     return (
         <div>
             <section data-id={id}>
@@ -19,11 +22,10 @@ const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTim
                 >
                     {text}
                 </p>
-                <div className="audioblock">
-                  {existsAudioUrl}
-
-                </div>
-            </section>
+        <div className="audioblock">
+        {existsAudioUrl}
+        </div>
+        </section>
 
         </div>
     );
