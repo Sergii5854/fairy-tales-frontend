@@ -26,7 +26,11 @@ const ItemFaIrytailesAdmin = ({audioUrl, id, imageUrl, lullaby, name, text, upda
                        className="audioblock"/>
 
             </section>
+            <div className='new__fairytale__button'>
 
+                <button className="btn__close">Close</button>
+                <button className="btn__add">Add</button>
+            </div>
 
         </div>
     );
