@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import DataTable from '../../components/data-table';
 
 import Header from './../../components/header/'
+import ButtonAdd from './../../components/button-add/'
 import axios from 'axios'
 
 class FairytaleAdmin extends Component {
@@ -48,6 +49,7 @@ class FairytaleAdmin extends Component {
                     background="#dc76276b"
                 />
                 <DataTable data={data}/>
+                <ButtonAdd/>
             </div>
         )
     }
