@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import { Route, Redirect, Router, withRouter } from 'react-router'
 import './styles.styl';
 import logo from './logo.png'
 import {
   registrate
 } from '../../services/http'
 
-export default class Login extends Component {
+class Login extends Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -34,7 +35,15 @@ export default class Login extends Component {
       console.log(event)
 
       registrate(this.state.user)
-        .then(console.log)
+        .then((event) => {
+        if (event) {
+              console.log('Registration succses');
+              this.props.history.push('/fairytales-admin')
+            } else {
+              console.log('Error')
+              alert('Registration failed')
+            }
+        })
         .catch(console.warn)
     }
 
@@ -89,3 +98,5 @@ export default class Login extends Component {
     }
 
 }
+
+export default withRouter(Login);
