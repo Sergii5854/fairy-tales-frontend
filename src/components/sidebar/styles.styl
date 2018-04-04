@@ -8,7 +8,7 @@ ul.open
 #menu-links
   transition .3s
   display:none;
-  background-color: rgba(220,118,39,0.65);
+  background-color: $menu-links-bg;
 
 #menu-links img
   margin: 0 auto;
@@ -23,7 +23,7 @@ ul.open
   transition: .5s ease-in-out;
   width: 20%;
   min-width: 110px;
-  background-color: rgba(220, 118, 39, 0.65);
+  background-color: $menu-bg;
   display:block;
   margin: 0;
 
@@ -31,17 +31,17 @@ ul.open
   list-style-type: none;
 
 #menu-links > li a
-    color: #334152;
+    color: $black-text;
     display: block;
     padding: 20px 15%;
 
 #menu-links > li a:hover
-    background-color: #d3531a;
-    color: white;
+    background-color: $sidebar_item-hover;
+    color: $white;
 
 #menu-links > li a.active
-    background-color: #d3531a;
-    color: white;
+    background-color: $sidebar_item-hover;
+    color: $white;
 
 div.table
   width: 100%;

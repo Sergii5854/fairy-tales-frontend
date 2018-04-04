@@ -1,6 +1,6 @@
 
 .oopss
-  background: #222;
+  background: $black-text;
   text-align: center;
   margin-bottom: 50px;
   font-weight: 400;
@@ -16,16 +16,16 @@
   top: 30%;
   position: relative;
   font-size: 40px;
-  color: #eee;
+  color: $lightest-blue;
 
 .error-text a
-  color: #eee;
+  color: $lightest-blue;
 
 .error-text a:hover
-  color: #fff;
+  color: $white;
 
 .error-text p
-  color: #eee;
+  color: $lightest-blue;
   margin: 70px 0 0 0;
 
 .error-text i
@@ -36,8 +36,8 @@
 
 .error-text span
   position: relative;
-  background: #ef4824;
-  color: #fff;
+  background: $error-text-bg ;
+  color: $white;
   font-size: 300%;
   padding: 0 20px;
   border-radius: 5px;
@@ -47,7 +47,7 @@
   margin: 0 0 40px 0;
 
 .error-text span:hover
-  background: #d7401f;
+  background: $error-text-hover;
   color: #fff;
   -webkit-animation: jelly .5s;
   -moz-animation: jelly .5s;
@@ -64,8 +64,8 @@
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-color: rgba(136, 183, 213, 0);
-  border-top-color: #ef4824;
+  border-color: transparent;
+  border-top-color: $error-text-border;
   border-width: 7px;
   margin-left: -7px;
 
@@ -73,17 +73,17 @@
   -webkit-transform: scale(0.95);
   -moz-transform: scale(0.95);
   transform: scale(0.95);
-  background: #f53b3b;
-  color: #fff;
+  background: $back-bg-active;
+  color: $white;
 
 .back:hover
-  background: #4c4c4c;
-  color: #fff;
+  background: $back-hover;
+  color: $white;
 
 .back
   text-decoration: none;
-  background: #5b5a5a;
-  color: #fff;
+  background: $back-bg;
+  color: $white;
   padding: 10px 20px;
   font-size: 20px;
   font-weight: 700;
