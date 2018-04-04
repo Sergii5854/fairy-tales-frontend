@@ -34,10 +34,8 @@ class NewFairytele extends Component {
         })
     }
 
-    closeModal (closeModal) {
-        alert("close")
-        this.setState((prevState) => ({
-            showModal: !prevState.showModal}));
+    closeModal () {
+        this.props.closeModal()
     }
 
     submit (event) {
@@ -134,8 +132,5 @@ class NewFairytele extends Component {
         )
     }
 };
-NewFairytele.defaultProps = {
-    name: 10,
-    closeModal: () => closeModal
-};
+
 export default NewFairytele;
