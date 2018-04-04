@@ -6,6 +6,8 @@ const Header = ({title, subTitle,background}) => {
     const toggle = () => {
         var element = document.getElementById("menu-links");
         element.classList.toggle("open");
+        document.getElementById("logo").classList.toggle("hidden");
+        document.getElementById("menu").classList.toggle("open");
     };
 
     return (
@@ -24,11 +26,11 @@ const Header = ({title, subTitle,background}) => {
             <h1 >{title}</h1>
             <h3>{subTitle}</h3>
         </div>
-        <img
+        <a href= "/"><img
     id = "logo" 
     src={logo}
     alt="logo"
-        />
+        /></a>
         </header>
 
     );

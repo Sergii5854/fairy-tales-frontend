@@ -11,3 +11,7 @@ export function registrate (user) {
 export function login (user) {
   return axios.post(`${server}/login`, {user})
 }
+
+export function newFairytale (fairytale) {
+  return axios.post(`${server}/fairytales`, {fairytale})
+}
