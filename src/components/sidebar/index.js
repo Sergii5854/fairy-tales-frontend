@@ -6,7 +6,8 @@ import logo from './logo.png'
 const Sidebar = () => {
     const toggle_nav = () => {
         var element = document.getElementById("menu-links");
-       element.classList.remove("open");
+        element.classList.remove("open");
+        document.getElementById("menu").classList.toggle("open");
     };
     return(
 
