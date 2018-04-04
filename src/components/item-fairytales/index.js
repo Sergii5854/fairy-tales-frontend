@@ -9,7 +9,6 @@ const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTim
     let playlist =
         [{ url: audioUrl , title: name }];
 
-    console.log(playlist,audioUrl);
     let existsAudioUrl = <AudioPlayer  playlist={playlist}  />
             
     return (
