@@ -13,14 +13,14 @@
   height: auto;
 
 .pagination li a.active
-  background-color: #d3531a;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-color: $pagination-link-active;
+  box-shadow: 0 0 10px $pagination-link-active-shadow;
 
 select:focus
   outline: none;
 
 .pagination li a
-  color: #444;
+  color: $pagination-link-text;
   display: inline-block;
   font-size: 1.2rem;
   padding: 0 10px;
@@ -35,8 +35,8 @@ select:focus
   width: 100%
   height auto
   max-width 75px
-  background #f5d5c0
+  background $pagination__strip-bg
   max-height: 30px;
   margin: 12px 0 12px 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px $pagination__strip-shadow;
   border: none;

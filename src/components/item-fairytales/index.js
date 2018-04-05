@@ -10,6 +10,10 @@ const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTim
         [{ url: audioUrl , title: name }];
 
     let existsAudioUrl = <AudioPlayer  playlist={playlist}  />
+        
+    if (audioUrl === undefined) {
+      existsAudioUrl = null
+    }
             
     return (
         <div>

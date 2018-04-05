@@ -105,3 +105,19 @@
   justify-content center
   a
     padding: 10px
+    color $form_button-color;
+  a:hover
+    text-decoration: underline;
+
+button.form_button
+  background-color: $form_button-bg;
+  border 1px solid $form_button-border;
+  color #fff;
+  box-shadow:2px 2px 2px $form_button-shadow;
+
+button:focus,
+button:hover
+  background-color: $btn__close-bg;
+  border 1px solid $form_button-border;
+  color $form_button-color;
+  box-shadow:2px 2px 2px $form_button-shadow ;

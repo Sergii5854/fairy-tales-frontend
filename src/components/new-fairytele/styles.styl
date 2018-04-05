@@ -4,6 +4,43 @@ input
   outline none
   border none
 
+textarea.textarea
+  min-height 60px
+
+.new__fairytale input:not([type]),
+.new__fairytale input[type=text]:not(.browser-default),
+.new__fairytale input[type=password]:not(.browser-default),
+.new__fairytale input[type=email]:not(.browser-default),
+.new__fairytale input[type=url]:not(.browser-default),
+.new__fairytale input[type=time]:not(.browser-default),
+.new__fairytale input[type=date]:not(.browser-default),
+.new__fairytale input[type=datetime]:not(.browser-default),
+.new__fairytale input[type=datetime-local]:not(.browser-default),
+.new__fairytale input[type=tel]:not(.browser-default),
+.new__fairytale input[type=number]:not(.browser-default),
+.new__fairytale input[type=search]:not(.browser-default)
+  height 1.5rem
+
+.new__fairytale input:not([type]):focus,
+.new__fairytale input[type=text]:not(.browser-default):focus,
+.new__fairytale input[type=password]:not(.browser-default):focus,
+.new__fairytale input[type=email]:not(.browser-default):focus,
+.new__fairytale input[type=url]:not(.browser-default):focus,
+.new__fairytale input[type=time]:not(.browser-default):focus,
+.new__fairytale input[type=date]:not(.browser-default):focus,
+.new__fairytale input[type=datetime]:not(.browser-default):focus,
+.new__fairytale input[type=datetime-local]:not(.browser-default):focus,
+.new__fairytale input[type=tel]:not(.browser-default):focus,
+.new__fairytale input[type=number]:not(.browser-default):focus,
+.new__fairytale input[type=search]:not(.browser-default):focus
+  border-bottom: 1px solid $new_fairytele-bottom-border
+  -webkit-box-shadow: 0 1px 0 0 $new_fairytele-shadow
+  box-shadow: 0 1px 0 0 $new_fairytele-shadow
+
+.new__fairytale textarea:focus
+  border: 1px solid $new_fairytele-bottom-border
+  outline: $new_fairytele-outline auto 5px
+
 .new__fairytale-container
   background-color $modal__background-head
   position fixed
@@ -85,15 +122,15 @@ input
 
   border-top 1.1px solid $modal__label
 
-.btn__close
-  background-color: #fff;
-  border: 1px solid #009688;
-  color: #009688;
+.new__fairytale__button .btn__close
+  background-color: $btn__close-bg ;
+  border: 1px solid $btn__close-border;
+  color: $btn__close-color;
   width: 90px;
-  height: 36px;
+  height: 30px;
   border-radius: 2px;
   line-height: 1.43;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.48);
+  box-shadow: 0 2px 2px 0 $btn__close-shadow;
   text-align: center;
   text-transform: uppercase;
   font-family: Roboto;
@@ -104,15 +141,20 @@ input
   transition: 0.3s;
   margin 10px
 
-.btn__add
+.new__fairytale__button .btn__close:hover
   color: #fff;
-  background-color: #009688;
-  border: 1px solid #009688;
+  background-color: $btn__close-bg-hover ;
+  border: 1px solid $btn__close-border;
+
+.new__fairytale__button .btn__add
+  color: #fff;
+  background-color: $btn__add-bg-hover;
+  border: 1px solid $btn__add-border;
   width: 90px;
-  height: 36px;
+  height: 30px;
   border-radius: 2px;
   line-height: 1.43;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.48);
+  box-shadow: 0 2px 2px 0 $btn__close-shadow;
   text-align: center;
   text-transform: uppercase;
   font-family: Roboto;
@@ -122,3 +164,8 @@ input
   cursor: pointer;
   transition: 0.3s;
   margin 10px
+
+.new__fairytale__button .btn__add:hover
+  background-color: #fff;
+  border: 1px solid $btn__close-border;
+  color: $btn__add-color;
