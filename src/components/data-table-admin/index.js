@@ -94,7 +94,7 @@ const setNewDate = (props) => {
     }
 };
 
-class DataTable extends Component {
+class DataTableAdmin extends Component {
     static defaultProps = {
         onSort: (sortKey, sortOrderAsc) => undefined
     };
@@ -128,9 +128,8 @@ class DataTable extends Component {
     };
 
     getFairytale = (data) => {
-        this.props.history.push(`/fairytales/${data}`)
-        console.log("fairytale id : ", data, typeof data);
-        console.log(this.props);
+        this.props.history.push(`/fairytales-admin/${data}`);
+        console.log("fairytale-admin id : ", data, typeof data);
 
     }
 
@@ -193,4 +192,4 @@ class DataTable extends Component {
     }
 }
 
-export default withRouter(DataTable);
+export default withRouter(DataTableAdmin);

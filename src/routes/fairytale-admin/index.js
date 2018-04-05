@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import DataTable from '../../components/data-table';
+import DataTableAdmin from '../../components/data-table-admin';
 
 import Header from './../../components/header/'
 import ButtonAdd from './../../components/button-add/'
@@ -10,13 +10,11 @@ class FairytaleAdmin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
             data: []
         }
     }
 
     componentDidMount() {
-
         axios.get('https://tales-server.herokuapp.com/api/v1/fairytales-admin')
             .then(response => {
                 let data = response.data['fairytales']
@@ -48,7 +46,7 @@ class FairytaleAdmin extends Component {
                     subTitle="Всі казки"
                     background="#dc76276b"
                 />
-                <DataTable data={data}/>
+                <DataTableAdmin data={data}/>
                 <ButtonAdd/>
             </div>
         )

@@ -9,7 +9,6 @@ class Fairytales extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
             data: []
         }
 
@@ -17,7 +16,6 @@ class Fairytales extends Component {
     }
 
     componentDidMount() {
-
         axios.get('https://tales-server.herokuapp.com/api/v1/fairytales')
             .then(response => {
                 let data = response.data['fairytales']
