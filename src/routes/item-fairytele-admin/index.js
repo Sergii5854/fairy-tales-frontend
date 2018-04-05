@@ -12,8 +12,8 @@ class itemFairytelAdmin extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.match.params.id, " data from admin");
-        axios.get(`https://tales-server.herokuapp.com/api/v1/fairytalesg-admin/${this.props.match.params.id}`)
+          // alert(this.props.match.params.id, " data from admin");
+        axios.get(`https://tales-server.herokuapp.com/api/v1/fairytales-admin/${this.props.match.params.id}`)
             .then(response => {
                 let data = response.data['fairytales']
                 let dataALL = data
