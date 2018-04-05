@@ -6,6 +6,7 @@ const ItemFaIrytailesAdmin = ({audioUrl, id, imageUrl, lullaby, name, text, upda
     return (
         <div>
             <section data-id={id}>
+                <button className="btn__back"><a href={'/'+ btoa('fairytales-admin')}><i class="material-icons">undo</i></a></button>
                 <label > Назва казки</label>
                 <input value={name}/>
                 <label >Текст казки</label>
