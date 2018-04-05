@@ -38,7 +38,7 @@ class Login extends Component {
         .then((event) => {
         if (event) {
               console.log('Registration succses');
-              this.props.history.push('/fairytales-admin')
+              this.props.history.push('/'+ btoa('fairytales-admin'))
             } else {
               console.log('Error')
               alert('Registration failed')
