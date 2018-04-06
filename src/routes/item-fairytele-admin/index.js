@@ -44,7 +44,11 @@ class itemFairytelAdmin extends Component {
         let {data} = this.state;
 
         if (!this.state.data.length) {
-            return 'Loading...';
+            return (
+                <div className="loader">
+
+                </div>
+            )
         }
         console.log(this.state.data, "state2");
 

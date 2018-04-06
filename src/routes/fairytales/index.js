@@ -4,6 +4,7 @@ import DataTable from '../../components/data-table';
 
 import Header from './../../components/header/'
 import axios from 'axios'
+import Loader from 'react-loader-spinner'
 
 class Fairytales extends Component {
     constructor(props) {
@@ -37,7 +38,11 @@ class Fairytales extends Component {
         let {data} = this.state;
 
         if (!this.state.data.length) {
-            return 'Loading...';
+            return (
+                <div className="loader">
+
+                </div>
+            )
         }
 
         return (

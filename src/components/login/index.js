@@ -64,7 +64,9 @@ import {
         return (
             <div className='form'>
                 <div className='form_logo'>
+                    <a href="/">
                     <img src={logo} alt="Brand"/>
+                    </a>
                 </div>
                 <div className='form_title'>
                     Log<span>I</span>n

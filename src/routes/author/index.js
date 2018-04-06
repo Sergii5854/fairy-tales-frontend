@@ -35,7 +35,11 @@ export default class Author extends Component {
         let {data} = this.state;
 
         if (!this.state.data.length) {
-            return 'Loading...';
+            return (
+                <div className="loader">
+
+                </div>
+            )
         }
         return (
           <div>
