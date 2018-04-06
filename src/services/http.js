@@ -15,3 +15,11 @@ export function login (user) {
 export function newFairytale (fairytale) {
   return axios.post(`${server}/fairytales`, {fairytale})
 }
+
+export function editFairytale (fairytale) {
+  return axios.post(`${server}/fairytales`, {fairytale})
+}
+
+export function deleteFairytale (fairytale) {
+   axios.delete(`${server}/fairytales`, {fairytale})
+}

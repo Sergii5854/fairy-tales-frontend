@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import './styles.styl';
+import {
+    editFairytale,
+    deleteFairytale
+} from '../../services/http'
 
 export default class ItemFaIrytailesAdmin extends Component {
     constructor(props) {
         super(props);
         this.state = {
             fairytale: {
-                id: '',
                 name : '',
-                author: '',
                 text: '',
                 lullaby: true,
                 updateTime: Date.now(),
@@ -28,18 +30,19 @@ export default class ItemFaIrytailesAdmin extends Component {
                 [key]: value
             }
         })
-        console.log(this.state);
     }
 
     submit (event) {
         console.log("submit");
-        // newFairytale(this.state.fairytale)
-        //     .then(console.log)
-        //     .catch(console.warn)
+        editFairytale(this.state.fairytale)
+            .then(console.log)
+            .catch(console.warn)
     }
-    remove(){
+    remove(event){
+      event.preventDefault()
         let id =  this.props.id;
         console.log("clos", id);
+        deleteFairytale(this.state.fairytale)
     }
 
     render() {
@@ -50,6 +53,8 @@ export default class ItemFaIrytailesAdmin extends Component {
         let lullaby =  this.props.lullaby;
         let updateTime =  this.props.updateTime;
         let audioUrl =  this.props.audioUrl;
+
+        console.log(this.state);
 
         return (
             <div>
@@ -64,13 +69,13 @@ export default class ItemFaIrytailesAdmin extends Component {
                         type="text"
                         name="name"
                         defaultValue={name}
-                        onChange={event => this.changeValue('id', event.target.value)}
+                        onChange={event => this.changeValue('name', event.target.value)}
                     />
                     <label>Текст казки</label>
                     <textarea  type="text"
                         name="text"
                         defaultValue={text}
-                        onChange={event => this.changeValue('id', event.target.value)}
+                        onChange={event => this.changeValue('text', event.target.value)}
                         className="textarea"
 
                     />
@@ -78,19 +83,19 @@ export default class ItemFaIrytailesAdmin extends Component {
                     <input name="lullaby"
                            type="text"
                            defaultValue={lullaby}
-                           onChange={event => this.changeValue('id', event.target.value)}
+                           onChange={event => this.changeValue('lullaby', event.target.value)}
                     />
                     <label>Час завантаження казки</label>
                     <input name="updateTime"
                            type="text"
                            defaultValue={updateTime}
-                           onChange={event => this.changeValue('id', event.target.value)}
+                           onChange={event => this.changeValue('updateTime', event.target.value)}
                     />
                     <label>Аудіо казки</label>
                     <input name="audioUrl"
                            type="text"ц
                            defaultValue={audioUrl}
-                           onChange={event => this.changeValue('id', event.target.value)}
+                           onChange={event => this.changeValue('audioUrl', event.target.value)}
                            className="audioblock"/>
 
                 </section>
@@ -98,10 +103,12 @@ export default class ItemFaIrytailesAdmin extends Component {
 
                     <a href={'/' + btoa('fairytales-admin')}
                             className="btn__close btn">Close</a>
-                    <a href='#'
+
+                    <a href={'/' + btoa('fairytales-admin')}
                        className="btn__remove btn"
                         onClick={this.remove}
                     >Remove</a>
+
                     <a onClick={this.submit}
                        className="btn__add btn">Add</a>
                 </div>
@@ -110,4 +117,3 @@ export default class ItemFaIrytailesAdmin extends Component {
         );
     }
 };
-
