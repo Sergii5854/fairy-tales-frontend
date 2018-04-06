@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './styles.styl';
+import './loader.styl';
 
 import Fairytales from '../routes/fairytales';
 import ItemFairytal from './../routes/item-fairytele';

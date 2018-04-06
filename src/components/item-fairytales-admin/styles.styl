@@ -25,6 +25,8 @@
   margin-top: 10px;
   &:hover
     background transparent
+.btn
+  padding 5px 0
 .item__button .btn__close
   background-color: $btn__close-bg ;
   border: 1px solid $btn__close-border;
@@ -51,7 +53,7 @@
 
 .item__button .btn__add
   color: #fff;
-  background-color: $btn__add-bg-hover;
+  background-color: $btn_submit;
   border: 1px solid $btn__add-border;
   width: 90px;
   height: 30px;
@@ -69,6 +71,30 @@
   margin 10px
 
 .item__button .btn__add:hover
+  background-color: #fff;
+  border: 1px solid $btn__close-border;
+  color: $btn__add-color;
+
+.item__button .btn__remove
+  color: #fff;
+  background-color: $btn__add-bg-hover;
+  border: 1px solid $btn__add-border;
+  width: 90px;
+  height: 30px;
+  border-radius: 2px;
+  line-height: 1.43;
+  box-shadow: 0 2px 2px 0 $btn__close-shadow;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin 10px
+
+.item__button .btn__remove:hover
   background-color: #fff;
   border: 1px solid $btn__close-border;
   color: $btn__add-color;

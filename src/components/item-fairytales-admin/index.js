@@ -18,6 +18,7 @@ export default class ItemFaIrytailesAdmin extends Component {
         }
         this.changeValue = this.changeValue.bind(this);
         this.submit = this.submit.bind(this);
+        this.remove = this.remove.bind(this);
     }
 
     changeValue(key, value ){
@@ -31,9 +32,14 @@ export default class ItemFaIrytailesAdmin extends Component {
     }
 
     submit (event) {
+        console.log("submit");
         // newFairytale(this.state.fairytale)
         //     .then(console.log)
         //     .catch(console.warn)
+    }
+    remove(){
+        let id =  this.props.id;
+        console.log("clos", id);
     }
 
     render() {
@@ -82,7 +88,7 @@ export default class ItemFaIrytailesAdmin extends Component {
                     />
                     <label>Аудіо казки</label>
                     <input name="audioUrl"
-                           type="text"
+                           type="text"ц
                            defaultValue={audioUrl}
                            onChange={event => this.changeValue('id', event.target.value)}
                            className="audioblock"/>
@@ -90,8 +96,14 @@ export default class ItemFaIrytailesAdmin extends Component {
                 </section>
                 <div className='item__button'>
 
-                    <button className="btn__close">Close</button>
-                    <button type="submit" className="btn__add">Add</button>
+                    <a href={'/' + btoa('fairytales-admin')}
+                            className="btn__close btn">Close</a>
+                    <a href='#'
+                       className="btn__remove btn"
+                        onClick={this.remove}
+                    >Remove</a>
+                    <a onClick={this.submit}
+                       className="btn__add btn">Add</a>
                 </div>
 
             </div>
