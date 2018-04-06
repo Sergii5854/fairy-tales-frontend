@@ -12,7 +12,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            template: './src/index.html'
+            template: './src/index.html',
+            favicon: 'favicon.ico',
+            filename: 'favicon.html'
         }),
         new webpack.DefinePlugin({
             'process.env': {
@@ -36,6 +38,14 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif|ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
                 loader: 'file-loader'
+            },
+            {
+                test: /favicon\.ico$/,
+                loader: 'url',
+                query: {
+                    limit: 1,
+                    name: '[name].[ext]',
+                },
             }
 
         ]

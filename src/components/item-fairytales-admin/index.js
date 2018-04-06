@@ -13,11 +13,13 @@ const ItemFaIrytailesAdmin = ({audioUrl, id, imageUrl, lullaby, name, text, upda
                     </a>
                 </button>
                 <label> Назва казки</label>
-                <input value={name}/>
+                <input
+                    value={name}
+                    onChange={name}/>
                 <label>Текст казки</label>
                 <textarea value={text}
                           className="textarea"
-                    // style={{background:`url(${imageUrl})`}}
+
                 />
                 <label>Зображення казки</label>
                 <input value={imageUrl}/>
