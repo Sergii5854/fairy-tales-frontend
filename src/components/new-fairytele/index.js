@@ -124,7 +124,7 @@ class NewFairytele extends Component {
                   </div>
                   <div className='new__fairytale__button'>
                     <button  className="btn__close">Close</button>
-                    <button className="btn__add">Add</button>
+                    <button type="submit" className="btn__add">Add</button>
                   </div>
                 </form>
               </div>

@@ -17,6 +17,7 @@ export default class ItemFaIrytailesAdmin extends Component {
             }
         }
         this.changeValue = this.changeValue.bind(this);
+        this.submit = this.submit.bind(this);
     }
 
     changeValue(key, value ){
@@ -28,6 +29,13 @@ export default class ItemFaIrytailesAdmin extends Component {
         })
         console.log(this.state);
     }
+
+    submit (event) {
+        // newFairytale(this.state.fairytale)
+        //     .then(console.log)
+        //     .catch(console.warn)
+    }
+
     render() {
 
         let id =  this.props.id;
@@ -53,7 +61,7 @@ export default class ItemFaIrytailesAdmin extends Component {
                         onChange={event => this.changeValue('id', event.target.value)}
                     />
                     <label>Текст казки</label>
-                    <textarea
+                    <textarea  type="text"
                         name="text"
                         defaultValue={text}
                         onChange={event => this.changeValue('id', event.target.value)}
@@ -62,16 +70,19 @@ export default class ItemFaIrytailesAdmin extends Component {
                     />
                     <label>Колискова</label>
                     <input name="lullaby"
+                           type="text"
                            defaultValue={lullaby}
                            onChange={event => this.changeValue('id', event.target.value)}
                     />
                     <label>Час завантаження казки</label>
                     <input name="updateTime"
+                           type="text"
                            defaultValue={updateTime}
                            onChange={event => this.changeValue('id', event.target.value)}
                     />
                     <label>Аудіо казки</label>
                     <input name="audioUrl"
+                           type="text"
                            defaultValue={audioUrl}
                            onChange={event => this.changeValue('id', event.target.value)}
                            className="audioblock"/>
@@ -80,7 +91,7 @@ export default class ItemFaIrytailesAdmin extends Component {
                 <div className='item__button'>
 
                     <button className="btn__close">Close</button>
-                    <button className="btn__add">Add</button>
+                    <button type="submit" className="btn__add">Add</button>
                 </div>
 
             </div>
