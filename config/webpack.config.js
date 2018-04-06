@@ -24,20 +24,20 @@ module.exports = {
         }),
         new FaviconsWebpackPlugin({
             // Your source logo
-            logo: './favicon/icon.png',
+            logo: './icon.png',
             // The prefix for all image files (might be a folder or a name)
-            prefix: 'icons-[hash]/',
+            prefix: 'icons/',
             // Emit all stats of the generated icons
             emitStats: false,
             // The name of the json containing all favicon information
-            statsFilename: 'iconstats-[hash].json',
+            statsFilename: 'iconstats.json',
             // Generate a cache file with control hashes and
             // don't rebuild the favicons until those hashes change
             persistentCache: true,
             // Inject the html into the html-webpack-plugin
             inject: true,
             // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-            background: '#fff',
+            background: 'transparent',
             // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
             title: 'Webpack App',
 
@@ -69,7 +69,7 @@ module.exports = {
                 loader: 'style-loader!css-loader!stylus-loader'
             },
             {
-                test: /\.(png|jpg|gif|ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                test: /\.(png|jpg|gif|ttf|otf|ico|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
                 loader: 'file-loader'
             }
 
