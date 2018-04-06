@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {render} from 'react-dom';
-import '/favicon.ico'
+
 import App from './app';
 
 const root = document.getElementById('root');
