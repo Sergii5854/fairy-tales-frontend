@@ -2,72 +2,89 @@ import React, {Component} from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import './styles.styl';
 
-const ItemFaIrytailesAdmin = ({audioUrl, id, imageUrl, lullaby, name, text, updateTime}) => {
-
-    var talesObj = {
-        'name': {name}
+export default class ItemFaIrytailesAdmin extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fairytale: {
+                id: '',
+                name : '',
+                author: '',
+                text: '',
+                lullaby: true,
+                updateTime: Date.now(),
+                audioUrl: ''
+            }
+        }
+        this.changeValue = this.changeValue.bind(this);
     }
-    console.log(talesObj);
 
-    const changeValue = (key) => {
-    let value = document.getElementsByName(key)[0].value;
-       console.log(key, value)
-        talesObj.key = value
-
-        console.log(talesObj);
+    changeValue(key, value ){
+        this.setState({
+            fairytale: {
+                ...this.state.fairytale,
+                [key]: value
+            }
+        })
+        console.log(this.state);
     }
+    render() {
 
-    return (
-        <div>
-            <section data-id={id}>
-                <button className="btn__back">
-                    <a href={'/' + btoa('fairytales-admin')}>
-                        <i className="material-icons">undo</i>
-                    </a>
-                </button>
-                <label> Назва казки</label>
-                <input
-                    type="text"
-                    name="name"
-                    defaultValue={name}
-                    onChange={() => changeValue('name')}/>
-                <label>Текст казки</label>
-                <textarea
-                          name="text"
-                          defaultValue={text}
-                          onChange={() => changeValue('text')}
-                          className="textarea"
+        let id =  this.props.id;
+        let name =  this.props.name;
+        let text =  this.props.text;
+        let lullaby =  this.props.lullaby;
+        let updateTime =  this.props.updateTime;
+        let audioUrl =  this.props.audioUrl;
 
-                />
-                <label>Зображення казки</label>
-                <input name="imageUrl"
-                       defaultValue={imageUrl}
-                       onChange={() => changeValue('imageUrl')}/>
-                <label>Колискова</label>
-                <input name="lullaby"
-                       defaultValue={lullaby}
-                       onChange={() => changeValue('lullaby')}/>
-                <label>Час завантаження казки</label>
-                <input name="updateTime"
-                       defaultValue={updateTime}
-                       onChange={() => changeValue('updateTime')}/>
-                <label>Аудіо казки</label>
-                <input name="audioUrl"
-                       defaultValue={audioUrl}
-                       onChange={() => changeValue('audioUrl')}
-                       className="audioblock"/>
+        return (
+            <div>
+                <section data-id={id}>
+                    <button className="btn__back">
+                        <a href={'/' + btoa('fairytales-admin')}>
+                            <i className="material-icons">undo</i>
+                        </a>
+                    </button>
+                    <label> Назва казки</label>
+                    <input
+                        type="text"
+                        name="name"
+                        defaultValue={name}
+                        onChange={event => this.changeValue('id', event.target.value)}
+                    />
+                    <label>Текст казки</label>
+                    <textarea
+                        name="text"
+                        defaultValue={text}
+                        onChange={event => this.changeValue('id', event.target.value)}
+                        className="textarea"
 
-            </section>
-            <div className='item__button'>
+                    />
+                    <label>Колискова</label>
+                    <input name="lullaby"
+                           defaultValue={lullaby}
+                           onChange={event => this.changeValue('id', event.target.value)}
+                    />
+                    <label>Час завантаження казки</label>
+                    <input name="updateTime"
+                           defaultValue={updateTime}
+                           onChange={event => this.changeValue('id', event.target.value)}
+                    />
+                    <label>Аудіо казки</label>
+                    <input name="audioUrl"
+                           defaultValue={audioUrl}
+                           onChange={event => this.changeValue('id', event.target.value)}
+                           className="audioblock"/>
 
-                <button className="btn__close">Close</button>
-                <button className="btn__add">Add</button>
+                </section>
+                <div className='item__button'>
+
+                    <button className="btn__close">Close</button>
+                    <button className="btn__add">Add</button>
+                </div>
+
             </div>
-
-        </div>
-    );
-
+        );
+    }
 };
 
-
-export default ItemFaIrytailesAdmin;
