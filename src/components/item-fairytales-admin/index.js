@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import './styles.styl';
 
-const ItemFaIrytailesAdmin = ({audioUrl, id, imageUrl, lullaby, name, text, updateTime, updated}) => {
+const ItemFaIrytailesAdmin = ({audioUrl, id, imageUrl, lullaby, name, text, updateTime}) => {
+
+    var talesObj = {
+        'name': {name}
+    }
+    console.log(talesObj);
+
+    const changeValue = (key) => {
+    let value = document.getElementsByName(key)[0].value;
+       console.log(key, value)
+        talesObj.key = value
+
+        console.log(talesObj);
+    }
 
     return (
         <div>
@@ -14,23 +27,34 @@ const ItemFaIrytailesAdmin = ({audioUrl, id, imageUrl, lullaby, name, text, upda
                 </button>
                 <label> Назва казки</label>
                 <input
-                    value={name}
-                    onChange={name}/>
+                    type="text"
+                    name="name"
+                    defaultValue={name}
+                    onChange={() => changeValue('name')}/>
                 <label>Текст казки</label>
-                <textarea value={text}
+                <textarea
+                          name="text"
+                          defaultValue={text}
+                          onChange={() => changeValue('text')}
                           className="textarea"
 
                 />
                 <label>Зображення казки</label>
-                <input value={imageUrl}/>
+                <input name="imageUrl"
+                       defaultValue={imageUrl}
+                       onChange={() => changeValue('imageUrl')}/>
                 <label>Колискова</label>
-                <input value={lullaby}/>
+                <input name="lullaby"
+                       defaultValue={lullaby}
+                       onChange={() => changeValue('lullaby')}/>
                 <label>Час завантаження казки</label>
-                <input value={updateTime}/>
-                <label>Оновлена казка</label>
-                <input value={updated}/>
+                <input name="updateTime"
+                       defaultValue={updateTime}
+                       onChange={() => changeValue('updateTime')}/>
                 <label>Аудіо казки</label>
-                <input value={audioUrl}
+                <input name="audioUrl"
+                       defaultValue={audioUrl}
+                       onChange={() => changeValue('audioUrl')}
                        className="audioblock"/>
 
             </section>
