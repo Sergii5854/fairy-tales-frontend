@@ -48,9 +48,10 @@ import {
       login(this.state.user)
 
       .then((event) => {
+        console.log(event.data.user);
         if (event.data.user && event.data.user.email === this.state.user.email) {
             console.log('Succses');
-            this.props.history.push('/fairytales-admin')
+            this.props.history.push('/'+ btoa('fairytales-admin'))
           } else {
             console.log('Error')
             alert('This user ' + this.state.user.email + ' does not exist')
@@ -60,6 +61,7 @@ import {
     }
 
     render() {
+
 
         return (
             <div className='form'>
@@ -98,8 +100,8 @@ import {
                     <button type="submit" className='form_button'>Log In </button>
                 </form>
                 <div className='form_other '>
-                    <a href='#'>Forgot password?</a>
-                    <a href='/registration'>Registration</a>
+                    {/*<a href='#'>Forgot password?</a>*/}
+                    {/* <a href='/registration'>Registration</a>*/}
                 </div>
             </div>
         );

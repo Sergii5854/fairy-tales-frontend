@@ -128,7 +128,7 @@ class DataTableAdmin extends Component {
     };
 
     getFairytale = (data) => {
-        this.props.history.push(`/fairytales-admin/${data}`);
+        this.props.history.push('/'+ btoa('fairytales-admin') + `/${data}`);
         console.log("fairytale-admin id : ", data, typeof data);
 
     }

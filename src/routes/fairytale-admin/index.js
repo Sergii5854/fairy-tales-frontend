@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, Redirect } from 'react-router'
 
 import DataTableAdmin from '../../components/data-table-admin';
 
@@ -13,6 +14,8 @@ class FairytaleAdmin extends Component {
             data: []
         }
     }
+
+
 
     componentDidMount() {
         axios.get('https://tales-server.herokuapp.com/api/v1/fairytales-admin')
@@ -30,6 +33,7 @@ class FairytaleAdmin extends Component {
                     data: dataALL
                 })
             })
+
     }
 
     render() {
@@ -42,6 +46,10 @@ class FairytaleAdmin extends Component {
                 </div>
             )
         }
+
+        console.log(this.state.data);
+
+
 
         return (
             <div>
