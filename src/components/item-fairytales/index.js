@@ -18,15 +18,16 @@ const ItemFaIrytailes = ({audioUrl, id, imageUrl, lullaby, name, text, updateTim
     return (
         <div>
             <section data-id={id}>
-                <h1>{name}</h1>
+                <h1 className="title">{name}</h1>
+                <div className="audioblock">
+                    {existsAudioUrl}
+                </div>
                 <p className="text flow-text"
                     // style={{background:`url(${imageUrl})`}}
                 >
                     {text}
                 </p>
-        <div className="audioblock">
-        {existsAudioUrl}
-        </div>
+
         </section>
 
         </div>

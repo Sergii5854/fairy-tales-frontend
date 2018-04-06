@@ -12,7 +12,7 @@ class itemFairytelAdmin extends Component {
     }
 
     componentDidMount() {
-          // alert(this.props.match.params.id, " data from admin");
+        // alert(this.props.match.params.id, " data from admin");
         axios.get(`https://tales-server.herokuapp.com/api/v1/fairytales-admin/${this.props.match.params.id}`)
             .then(response => {
                 let data = response.data['fairytales']
@@ -31,11 +31,9 @@ class itemFairytelAdmin extends Component {
 
                         return res;
                     });
-                console.log(dataALL, "lif");
                 this.setState({
                     data: dataALL
                 })
-
             })
     }
 
@@ -50,8 +48,6 @@ class itemFairytelAdmin extends Component {
                 </div>
             )
         }
-        console.log(this.state.data, "state2");
-
         return (
             <div>
                 <Header

@@ -15,8 +15,6 @@ class FairytaleAdmin extends Component {
         }
     }
 
-
-
     componentDidMount() {
         axios.get('https://tales-server.herokuapp.com/api/v1/fairytales-admin')
             .then(response => {
@@ -33,7 +31,6 @@ class FairytaleAdmin extends Component {
                     data: dataALL
                 })
             })
-
     }
 
     render() {
@@ -46,11 +43,6 @@ class FairytaleAdmin extends Component {
                 </div>
             )
         }
-
-        console.log(this.state.data);
-
-
-
         return (
             <div>
                 <Header

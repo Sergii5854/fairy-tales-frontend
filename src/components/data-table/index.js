@@ -129,9 +129,6 @@ class DataTable extends Component {
 
     getFairytale = (data) => {
         this.props.history.push(`/fairytales/${data}`)
-        console.log("fairytale id : ", data, typeof data);
-        console.log(this.props);
-
     }
 
     render() {

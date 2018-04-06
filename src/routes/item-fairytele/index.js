@@ -10,29 +10,31 @@ class itemFairytel extends Component {
             data: {}
         }
     }
-    componentDidMount () {
-    console.log(this.props.match.params.id);
-      axios.get(`https://tales-server.herokuapp.com/api/v1/fairytales/${this.props.match.params.id}`)
-          .then(response => {
-              let data = response.data['fairytales']
-              let dataALL = data
-                  .map(({id, name,text,audioUrl}) => {
-                      const res = {
-                          'id': Number(id),
-                          'name': name,
-                          'text': text,
-                          'audioUrl':audioUrl
-                      };
 
-                      return res;
-                  });
-              this.setState({
-                  data: dataALL
-              })
+    componentDidMount() {
+        // console.log(this.props.match.params.id);
+        axios.get(`https://tales-server.herokuapp.com/api/v1/fairytales/${this.props.match.params.id}`)
+            .then(response => {
+                let data = response.data['fairytales']
+                let dataALL = data
+                    .map(({id, name, text, audioUrl}) => {
+                        const res = {
+                            'id': Number(id),
+                            'name': name,
+                            'text': text,
+                            'audioUrl': audioUrl
+                        };
 
-          })
+                        return res;
+                    });
+                this.setState({
+                    data: dataALL
+                })
+
+            })
     }
-    render(){
+
+    render() {
 
         let {data} = this.state;
 
@@ -43,25 +45,25 @@ class itemFairytel extends Component {
                 </div>
             )
         }
-        console.log(this.state.data, "state2");
 
-        return(
-        <div>
-            <Header
-                title="Казки дитинства"
-                subTitle=""
-                background="#dc76276b"
-            />
-            <ItemFairytele
 
-                name={this.state.data[0].name}
-                text={this.state.data[0].text}
-                audioUrl={this.state.data[0].audioUrl}
-                id={this.state.data[0].id}
-            />
-        </div>
-    )
-  }
+        return (
+            <div>
+                <Header
+                    title="Казки дитинства"
+                    subTitle=""
+                    background="#dc76276b"
+                />
+                <ItemFairytele
+
+                    name={this.state.data[0].name}
+                    text={this.state.data[0].text}
+                    audioUrl={this.state.data[0].audioUrl}
+                    id={this.state.data[0].id}
+                />
+            </div>
+        )
+    }
 };
 
 export default itemFairytel;

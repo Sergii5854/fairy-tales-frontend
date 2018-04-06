@@ -13,11 +13,62 @@
   min-height: 200px;
   width: 100%;
 
-.new__fairytale__button
+.item__button
   display flex
   justify-content flex-end
   padding 15px 0
-  background-color $modal__background
-  
 .btn__back
-  float left
+  display: block;
+  padding: 10px;
+  border: 1px solid #dc7627;
+  border-radius: 50%;
+  margin-top: 10px;
+  &:hover
+    background transparent
+.item__button .btn__close
+  background-color: $btn__close-bg ;
+  border: 1px solid $btn__close-border;
+  color: $btn__close-color;
+  width: 90px;
+  height: 30px;
+  border-radius: 2px;
+  line-height: 1.43;
+  box-shadow: 0 2px 2px 0 $btn__close-shadow;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin 10px
+
+.item__button .btn__close:hover
+  color: #fff;
+  background-color: $btn__close-bg-hover ;
+  border: 1px solid $btn__close-border;
+
+.item__button .btn__add
+  color: #fff;
+  background-color: $btn__add-bg-hover;
+  border: 1px solid $btn__add-border;
+  width: 90px;
+  height: 30px;
+  border-radius: 2px;
+  line-height: 1.43;
+  box-shadow: 0 2px 2px 0 $btn__close-shadow;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin 10px
+
+.item__button .btn__add:hover
+  background-color: #fff;
+  border: 1px solid $btn__close-border;
+  color: $btn__add-color;

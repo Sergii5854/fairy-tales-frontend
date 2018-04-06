@@ -129,15 +129,13 @@ class DataTableAdmin extends Component {
 
     getFairytale = (data) => {
         this.props.history.push('/'+ btoa('fairytales-admin') + `/${data}`);
-        console.log("fairytale-admin id : ", data, typeof data);
-
     }
 
     render() {
         const {currentPage, pageSize, data, keys, sortKey, sortOrderAsc, dataTypes} = this.state;
 
         return (
-            <div className="table">
+            <div className="table-a">
                 <table>
                     <thead>
                     <tr>

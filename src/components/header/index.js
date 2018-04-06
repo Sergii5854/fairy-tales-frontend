@@ -23,7 +23,7 @@ const Header = ({title, subTitle,background}) => {
     </div>
     </div>
     <div className="title-wrapper">
-            <h1 >{title}</h1>
+            <h2 className="title" >{title}</h2>
             <h3>{subTitle}</h3>
         </div>
         <a href= "/"><img
