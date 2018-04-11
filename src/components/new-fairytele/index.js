@@ -1,5 +1,6 @@
 import React , {Component}from 'react';
 import './styles.styl';
+import { RadioGroup, RadioButton } from 'react-radio-buttons';
 import {
     newFairytale
 } from '../../services/http'
@@ -45,6 +46,7 @@ class NewFairytele extends Component {
     }
 
     render() {
+
         return (
             <div className='new__fairytale-container'>
               <div className='new__fairytale-wrap'>
@@ -79,13 +81,6 @@ class NewFairytele extends Component {
                               onChange={event => this.changeValue('text', event.target.value)}
                     />
 
-                    <label >Зображення казки</label>
-                    <input
-                        name='imageUrl'
-                        value={this.state.fairytale.imageUrl}
-                        onChange={event => this.changeValue('imageUrl', event.target.value)}
-                    />
-
                     <label >Автор</label>
                     <input
                         name='author'
@@ -94,25 +89,21 @@ class NewFairytele extends Component {
                     />
 
                     <label >Колискова</label>
-                    <input
-                        name='lullaby'
-                        value={this.state.fairytale.lullaby}
-                        onChange={event => this.changeValue('lullaby', event.target.value)}
-                    />
+                    {/*<input*/}
+                        {/*name='lullaby'*/}
+                        {/*value={this.state.fairytale.lullaby}*/}
+                        {/*onChange={event => this.changeValue('lullaby', event.target.value)}*/}
+                    {/*/>*/}
+                      <RadioGroup onChange={ this.onChange } horizontal>
+                          <RadioButton  value="false">
+                              false
+                          </RadioButton>
+                          <RadioButton value="true">
+                              true
+                          </RadioButton>
 
-                    <label >Час завантаження казки</label>
-                    <input
-                        name='updateTime'
-                        value={this.state.fairytale.updateTime}
-                        onChange={event => this.changeValue('updateTime', event.target.value)}
-                    />
+                      </RadioGroup>
 
-                    <label >Оновлена казка</label>
-                    <input
-                        name='updated'
-                        value={this.state.fairytale.updated}
-                        onChange={event => this.changeValue('updated', event.target.value)}
-                    />
 
                     <label >Аудіо казки</label>
                     <input name='audioUrl'
@@ -122,6 +113,7 @@ class NewFairytele extends Component {
                     />
 
                   </div>
+
                   <div className='new__fairytale__button'>
                     <button  className="btn__close">Close</button>
                     <button type="submit" className="btn__add">Add</button>
